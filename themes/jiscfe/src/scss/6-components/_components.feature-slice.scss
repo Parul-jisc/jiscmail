@@ -1,0 +1,171 @@
+/* ## Feature slice
+ * ========================================================================== */
+
+/**
+ * Usage: Slice, core.
+ *
+ * CMS implementation requirements:
+ * a. Accepts inline style, intended for background colour, a background image 
+ *    and associated background properties. The 'color' property should not be 
+ *    altered.
+ * b. The content that is the only child of this class is content editable. 
+ *    Accepted elements are:
+ *    Plain text
+ *    'a'
+ *    'abbr[title]'
+ *    'strong'
+ * c. Children of this class are content editable. Accepted elements are:
+ *    Plain text
+ *    'a'
+ *    'abbr'
+ *    'p'
+ *    'strong'
+ * d. The child of this class is configured by the CMS. The only accepted 
+ *    element is:
+ *    'img'
+ * e. The child of this class is configured by the CMS. The only accepted 
+ *    component is:
+ *    Button
+ * f. Children of this class are content editable. Accepted elements are:
+ *    Plain text
+ *    'a'
+ *    'abbr'
+ *    'dd'
+ *    'dl'
+ *    'dt'
+ *    'h3'
+ *    'li'
+ *    'p'
+ *    'strong'
+ *    'ul'
+ */
+
+/* section */.c-feature-slice { /* [a] */
+  @include u-Clearfix;
+  padding-top: calc(#{$whitespace-VR-double-landmark} - #{$whitespace-VR-landmark});
+  padding-bottom: $whitespace-VR-double-landmark;
+  background-color: $colour-White;
+
+  &--alt {
+    background-color: $colour-Grey_Alabaster;
+  }
+}
+
+.c-feature-slice__title { /* [b] */
+  @include typo-Euphonium;
+  margin-top: $whitespace-VR-landmark;
+
+  a {
+    @include link-LightBg(
+      $visited-style: true,
+      $has-surrounding-text: true
+    );
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.c-feature-slice__copy { /* [c] */
+
+  a {
+    @include link-LightBg(
+      $visited-style: true,
+      $has-surrounding-text: true
+    );
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 400;
+  }
+
+  p {
+    margin-top: $whitespace-VR-separate;
+    font-family: $font-Roboto;
+    font-size: 2.1rem;
+    font-weight: 300;
+    line-height: 2.7rem;
+  }
+}
+
+.c-feature-slice__img { /* [d] */
+  margin-top: $whitespace-VR-landmark;
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 39.6rem;
+  }
+
+  @include breakpoint($breakpoint-MD) {
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.c-feature-slice__cta { /* [e] */
+  margin-top: $whitespace-VR-separate;
+}
+
+.c-feature-slice__supporting-copy { /* [f] */
+  margin-top: $whitespace-VR-landmark;
+
+  a {
+    @include link-LightBg(
+      $visited-style: true,
+      $has-surrounding-text: true
+    );
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 400;
+  }
+
+  h3 {
+    @include typo-Baritone;
+    margin-top: $whitespace-VR-separate;
+  }
+
+  p {
+    @include typo-BodyCopy;
+    margin-top: $whitespace-VR-separate;
+  }
+
+  ul {
+    @include typo-BodyCopy;
+    margin-top: $whitespace-VR-separate;
+
+    li {
+      padding-left: $whitespace-Gutter-quad;
+      margin-top: $whitespace-VR-associate;
+      background-color: transparent;
+      background-image: url("/img/unordered-list-bullet.png");
+      background-position: $whitespace-Gutter-single 1.05rem;
+      background-repeat: no-repeat;
+    }
+  }
+
+  dt {
+    @include typo-BodyCopy;
+    margin-top: $whitespace-VR-separate;
+  }
+
+  dd {
+    @include typo-BodyCopy;
+  }
+}

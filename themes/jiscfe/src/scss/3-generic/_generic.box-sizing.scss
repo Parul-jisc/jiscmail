@@ -1,0 +1,24 @@
+/* ## Box sizing
+   ========================================================================== */
+
+/**
+ * "App reset by Ben Frain @benfrain / benfrain.com":
+ * https://github.com/benfrain/app-reset/blob/master/app-reset.css
+ *
+ * Hat tip to @thierrykoblentz for this approach: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+/* Yes, the universal selector. No, it isn't slow: https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/ */
+* {
+  /* Most devs find border-box easier to reason about. However by inheriting we can mix box-sizing approaches. */
+  box-sizing: inherit;
+}
+
+  *:before,
+  *:after {
+      box-sizing: inherit;
+  }

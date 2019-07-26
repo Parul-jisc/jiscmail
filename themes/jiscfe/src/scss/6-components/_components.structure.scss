@@ -1,0 +1,31 @@
+/* ## Structure (sitewide)
+ * ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ *
+ * 1. These classes are used as a hook for HTML5 semantic elements, eg <main>, 
+ *    <article>, <aside>, <header>, <footer> etc.
+ */
+
+/* html */.c-structure {
+  background-color: $colour-Grey_Concrete;
+}
+
+/* header */.c-structure__jisc-masthead {/* [1] */
+}
+
+/* nav */.c-structure__site-breadcrumb {/* [1] */
+}
+
+/* main */.c-structure__main-content {/* [1] */
+}
+
+.c-structure__major-content {/* [1] */
+}
+
+.c-structure__minor-content {/* [1] */
+}
+
+/* footer */.c-structure__jisc-footer {/* [1] */
+}

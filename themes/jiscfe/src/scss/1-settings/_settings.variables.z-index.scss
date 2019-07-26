@@ -1,0 +1,13 @@
+// ## z-index
+// ==========================================================================
+
+//
+// We manage z-index variables using a sustainable methodology.
+//
+// Technique: "Handling z-index: A z-index Partial"
+// Chris Coyier, 2014-04-21 
+// https://css-tricks.com/handling-z-index/
+//
+
+$zindex-MainContentSkiplink:               100;
+$zindex-SearchResultsSlice_RefineMenu:      50;

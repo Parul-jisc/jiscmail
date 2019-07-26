@@ -1,0 +1,142 @@
+/* ## Billboard slice
+ * ========================================================================== */
+
+/**
+ * Usage: Slice, core.
+ *
+ * Notes:
+ * 1. This component does not use the Grid object, as the foreground image has 
+ *    gutters; the grid used is specific to this component.
+ * 2. min-height is set on .c-billboard-slice__content-container so that 
+ *    align-self: center; can be used on .c-billboard-slice__content to 
+ *    vertically centrally align the copy, if the copy is not long enough to 
+ *    increase the height above that of the min-height set.
+ *
+ * CMS implementation requirements:
+ * a. Accepts inline style, intended for background colour, a background image 
+ *    and associated background properties. The 'color' property should not be 
+ *    altered.
+ * b. The content that is the only child of this class is content editable. 
+ *    Accepted elements are:
+ *    Plain text
+ *    'abbr[title]'
+ *    'strong'
+ *    - 'a' elements (links) are not allowed.
+ * c. Children of this class are content editable. Accepted elements are:
+ *    Plain text
+ *    'a'
+ *    'abbr'
+ *    'p'
+ *    'strong'
+ * d. The child of this class is configured by the CMS. The only accepted 
+ *    component is:
+ *    Button
+ * e. Accepts inline style, intended for a background image and associated 
+ *    background properties. The 'color' property should not be altered.
+ */
+
+$billboard-Height: calc(45rem - #{$whitespace-VR-double-landmark});
+
+/* section */.c-billboard-slice { /* [a] */
+  @include u-Clearfix;
+  color: $colour-White;
+  background-color: $colour-Grey_Tundora-light;
+
+  @include breakpoint($breakpoint-MD) { /* [1] */
+    position: relative;
+  }
+}
+
+.c-billboard-slice__inner { /* [1] */
+
+  @include breakpoint($breakpoint-MD) {
+    margin-right: -$whitespace-Gutter-single;
+    margin-left: -$whitespace-Gutter-single;
+  }
+}
+
+.c-billboard-slice__content-container {/* [1] */
+  padding-bottom: $whitespace-VR-double-landmark;
+
+  @include breakpoint($breakpoint-MD) {
+    display: flex;
+    min-height: $billboard-Height; /* [2] */
+  }
+}
+
+.c-billboard-slice__content { /* [1] */
+
+  @include breakpoint($breakpoint-MD) {
+    max-width: calc(100% * 5 / 12);
+    padding-right: $whitespace-Gutter-single;
+    padding-left: $whitespace-Gutter-single;
+    flex: 0 0 calc(100% * 5 / 12);
+    align-self: center; /* [2] */
+  }
+}
+
+/* h1 */.c-billboard-slice__title { /* [b] */
+  @include typo-Tuba;
+  margin-top: $whitespace-VR-double-landmark;
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.c-billboard-slice__copy { /* [c] */
+
+  a {
+    @include link-DarkBg(
+      $visited-style: true,
+      $has-surrounding-text: true
+    );
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  p {
+    margin-top: $whitespace-VR-separate;
+    font-family: $font-Roboto;
+    font-size: 2.1rem;
+    font-weight: 400;
+    line-height: 2.7rem;
+  }
+}
+
+/* p */.c-billboard-slice__cta { /* [d] */
+  margin-top: $whitespace-VR-separate;
+}
+
+.c-billboard-slice__foreground-img-container {
+
+  @include breakpoint($breakpoint-MD) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    min-height: $billboard-Height;
+  }
+}
+
+.c-billboard-slice__foreground-img { /* [e] */
+
+  @include breakpoint($breakpoint-MD) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

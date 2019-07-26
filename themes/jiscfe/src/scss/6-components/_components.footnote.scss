@@ -1,0 +1,73 @@
+/* ## Footnote
+ * ========================================================================== */
+
+/**
+ * Usage: Core.
+ *
+ * a. Children of this class are content editable. Accepted elements are:
+ *    - A single 'ol'
+ *      - That must contain one or more 'li's, that may contain:
+ *        - Plain text
+ *        - 'a'
+ *        - 'abbr'
+ *        - 'i'
+ *        - 'strong'
+ */
+
+//
+// "Accessible Footnotes with CSS":
+// https://www.sitepoint.com/accessible-footnotes-css/
+// Last updated: 2015-06-17.
+// Accessed: 2019-06-13.
+//
+
+.c-footnote {
+
+  &--default {
+    color: $colour-Grey_MineShaft-light;
+  }
+}
+
+.c-footnote__title {
+  @include typo-BodyCopy-bold();
+  margin-top: $whitespace-VR-landmark;
+}
+
+.c-footnote__notes { /* [a] */
+
+ ol {
+    padding-left: $whitespace-Gutter-triple;
+    margin-top: $whitespace-VR-associate;
+  
+    :target {
+      color: $colour-Grey_MineShaft-light;
+    }
+  }
+
+  li {
+    @include typo-Trumpet();
+    margin-top: ($whitespace-VR-associate * 2/3);
+    color: $colour-Grey_Grey-dark;
+    list-style-type: decimal;
+    list-style-position: outside;
+
+    a {
+      @include link-LightBg(
+        $visited-style: true,
+        $has-surrounding-text: true 
+      );
+    }
+
+    abbr {
+      @include u-Abbr();
+    }
+
+    i {
+      font-style: italic;
+    }
+
+    strong {
+      font-weight: 500;
+    }
+  }
+}

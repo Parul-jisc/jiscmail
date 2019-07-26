@@ -1,0 +1,17 @@
+/* ## Card (sitewide)
+ * ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ */
+
+.c-card {
+  @include u-Clearfix;
+  width: 100%;
+  padding-right: $whitespace-Gutter-double;
+  padding-bottom: $whitespace-VR-separate;
+  padding-left: $whitespace-Gutter-double;
+  margin-top: $whitespace-VR-separate;
+  color: $colour-Grey_MineShaft-light;
+  background-color: $colour-White;
+}

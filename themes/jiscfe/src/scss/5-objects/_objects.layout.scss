@@ -1,0 +1,45 @@
+/* ## Layout (sitewide)
+ * ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ *
+ * 1. Sitewide responsive fluid-width container (meaning it's 100% wide all the 
+ *    time).
+ */
+
+/* html */.o-layout {
+}
+
+.o-layout__container {/* [1] */
+  padding-right: $whitespace-Gutter-single;
+  padding-left: $whitespace-Gutter-single;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include breakpoint($breakpoint-LG) {
+    max-width: 99rem;
+  }
+
+  &--xl {
+
+    @include breakpoint($breakpoint-LG) {
+      max-width: none;
+    }
+
+    @include breakpoint($breakpoint-XL) {
+      max-width: 128rem;
+    }
+  }
+
+  &--xxl {
+
+    @include breakpoint($breakpoint-LG) {
+      max-width: none;
+    }
+
+    @include breakpoint($breakpoint-XXL) {
+      max-width: 140rem;
+    }
+  }
+}

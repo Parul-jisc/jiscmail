@@ -1,0 +1,315 @@
+/* ## Table
+ * ========================================================================== */
+
+/**
+ * Usage: Core.
+ */
+
+.c-table {
+  margin-top: $whitespace-VR-landmark;
+
+  &--default {
+  }
+
+  &--responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  &--small {
+  }
+}
+
+.c-table__table {
+
+  .c-table--default & {
+    width: 100%;
+    color: $colour-Grey_MineShaft-light;
+    background-color: $colour-White;
+  }
+
+  .c-table--responsive & {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .c-table--small & {
+    width: auto;
+  }
+}
+
+.c-table__vh {
+  @include u-Visuallyhidden();
+}
+
+.c-table__caption {
+  @include typo-Trumpet;
+  padding-bottom: $whitespace-VR-associate;
+  text-align: left;
+  caption-side: top;
+
+  a {
+    @include link-LightBg(
+      $visited-style: true,
+      $has-surrounding-text: true 
+    );
+  }
+
+  abbr {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.c-table__head {
+}
+
+.c-table__body {
+}
+
+.c-table__foot {
+}
+
+.c-table__header {
+  @include typo-Trumpet-bold;
+  padding: .6rem;
+  text-align: left;
+  vertical-align: top;
+  border-top: $whitespace-Border_Width-thin solid $colour-Grey_Alto;
+
+  @include breakpoint($breakpoint-MD) {
+    padding: 1.2rem;
+  }
+
+  &--iconic {
+    text-align: center;
+  }
+
+  &--numeric {
+    text-align: right;
+  }
+
+  a {
+    @include link-LightBg(
+      $visited-style: true,
+      $has-surrounding-text: true 
+    );
+  }
+
+  abbr {
+    @include u-Abbr();
+  }
+}
+
+.c-table__cell {
+  @include typo-Trumpet;
+  padding: .6rem;
+  vertical-align: top;
+  border-top: $whitespace-Border_Width-thin solid $colour-Grey_Alto;
+
+  @include breakpoint($breakpoint-MD) {
+    padding: 1.2rem;
+  }
+
+  &--iconic {
+    text-align: center;
+  }
+
+  &--numeric {
+    text-align: right;
+  }
+
+  a {
+    @include link-LightBg(
+      $visited-style: true,
+      $has-surrounding-text: true 
+    );
+  }
+
+  abbr {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.c-table__cell-copy {
+
+  :first-child {
+    margin-top: 0;
+  }
+
+  p {
+    @include typo-Trumpet;
+    margin-top: $whitespace-VR-associate;
+
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  ol,
+  ul {
+    padding-left: $whitespace-Gutter-quad;
+    margin-top: $whitespace-VR-associate;
+    list-style: none;
+
+    ol,
+    ul {
+      margin-top: 0;
+    }
+  }
+
+  li {
+    @include typo-Trumpet;
+
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  ol li {
+    margin-top: ($whitespace-VR-associate * 2/3);
+    list-style-position: outside;
+    list-style-type: decimal;
+  }
+
+  ul li {
+    margin-top: ($whitespace-VR-associate * 2/3);
+    list-style-type: disc;
+    list-style-position: outside;
+  }
+
+  ol ol li,
+  ul ol li {
+    margin-top: ($whitespace-VR-associate * 2/3);
+    list-style-type: lower-latin;
+    list-style-position: outside;
+  }
+
+  ol ol ol li,
+  ol ul ol li,
+  ul ol ol li,
+  ul ul ol li {
+    margin-top: ($whitespace-VR-associate * 2/3);
+    list-style-type: lower-roman;
+    list-style-position: outside;
+  }
+
+  ol ul li,
+  ul ul li {
+    margin-top: ($whitespace-VR-associate * 2/3);
+    list-style-type: circle;
+    list-style-position: outside;
+  }
+
+  ol ol ul li,
+  ol ul ul li,
+  ul ol ul li,
+  ul ul ul li {
+    margin-top: ($whitespace-VR-associate * 2/3);
+    list-style-type: square;
+    list-style-position: outside;
+  }
+}
+
+
+/* ### Grid item width utility classes
+ * -------------------------------------------------------------------------- */
+
+.c-table__table {
+
+  /* 9 column parent */
+
+  .u-1\/9 {
+    width: calc(1/9 * 100%);
+  }
+
+  .u-2\/9 {
+    width: calc(2/9 * 100%);
+  }
+
+  .u-3\/9 {
+    width: calc(3/9 * 100%);
+  }
+
+  .u-4\/9 {
+    width: calc(4/9 * 100%);
+  }
+
+  .u-5\/9 {
+    width: calc(5/9 * 100%);
+  }
+
+  .u-6\/9 {
+    width: calc(6/9 * 100%);
+  }
+
+  .u-7\/9 {
+    width: calc(7/9 * 100%);
+  }
+
+  .u-8\/9 {
+    width: calc(8/9 * 100%);
+  }
+
+  .u-9\/9 {
+    width: 100%;
+  }
+
+  /* 12 column parent */
+
+  .u-1\/12 {
+    width: calc(1/12 * 100%);
+  }
+
+  .u-2\/12 {
+    width: calc(2/12 * 100%);
+  }
+
+  .u-3\/12 {
+    width: calc(3/12 * 100%);
+  }
+
+  .u-4\/12 {
+    width: calc(4/12 * 100%);
+  }
+
+  .u-5\/12 {
+    width: calc(5/12 * 100%);
+  }
+
+  .u-6\/12 {
+    width: calc(6/12 * 100%);
+  }
+
+  .u-7\/12 {
+    width: calc(7/12 * 100%);
+  }
+
+  .u-8\/12 {
+    width: calc(8/12 * 100%);
+  }
+
+  .u-9\/12 {
+    width: calc(9/12 * 100%);
+  }
+
+  .u-10\/12 {
+    width: calc(10/12 * 100%);
+  }
+
+  .u-11\/12 {
+    width: calc(11/12 * 100%);
+  }
+
+  .u-12\/12 {
+    width: 100%;
+  }
+}

@@ -1,0 +1,13 @@
+
+    {% if label %}
+        <h1 class="c-generic-slice__heading-xl">{{ label}}</h1>
+    {% endif %}
+    {% block content %}
+        <div class="c-generic-slice__body-copy">
+            {% set conBody %}
+                {{ content.body }}
+            {% endset %}
+
+            {{ conBody|striptags }}
+        </div>
+    {% endblock %}

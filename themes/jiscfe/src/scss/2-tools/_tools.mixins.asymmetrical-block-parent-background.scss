@@ -1,0 +1,20 @@
+// ## Asymmetrical Block Parent Background
+// ==========================================================================
+
+//
+// Mixin to set the 50/50 colour/transparent background on asymmetrical blocks.
+//
+// .usage {
+//   @include o-AsymmetricBlockParentBackground() {
+// }
+//
+
+@mixin o-AsymmetricBlockParentBackground($bg-colour) {
+  background: linear-gradient(
+    to right, 
+    $bg-colour 0%, 
+    $bg-colour 50%, 
+    transparent 50%,
+    transparent 100%
+    );
+}

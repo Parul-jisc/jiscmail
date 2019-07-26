@@ -1,0 +1,169 @@
+/* ## Search results slice
+ * ========================================================================== */
+
+/**
+ * Usage: Slice, core.
+ *
+ * 1. Ensure the right elements are visible or not visible at >=757px viewports.
+ * 2. Used as a BEM mix with .o-grid__item.o-grid__item--equal-height\@MD to
+ *    get the background colour to extend to the bottom of the column.
+ * 3. Used as a BEM mix with .o-grid__item.o-grid__item--equal-height\@MD.
+ *    Exists for fiture-proofing.
+ */
+
+.c-search-results-slice {
+  color: $colour-Grey_MineShaft-light;
+  background-color: $colour-White;
+
+  &--default {
+
+    @include breakpoint($breakpoint-MD) {
+      background: linear-gradient(
+        to right, 
+        $colour-Grey_Alabaster 0%, 
+        $colour-Grey_Alabaster 50%, 
+        $colour-White 50%,
+        $colour-White 100%
+        );
+    }
+  }
+
+  &--alt {
+  }
+}
+
+.c-search-results-slice__inner {
+
+  &--default {
+
+    @include breakpoint($breakpoint-MD) {
+      background-color: $colour-White;
+    }
+  }
+
+  &--alt {
+  }
+}
+
+.c-search-results-slice__title {
+  @include u-Visuallyhidden;
+}
+
+.c-search-results-slice__menu-trigger {
+  display: none;
+
+  .js & {
+    display: block;
+
+    @include breakpoint($breakpoint-MD) {
+      display: none; /* [1] */
+    }
+  }
+
+  &--default {
+    padding-bottom: $whitespace-VR-associate;
+    background-color: $colour-Grey_Alabaster;
+  }
+
+  &--alt {
+  }
+}
+
+.c-search-results-slice__refine { /* [2] */
+
+  @include breakpoint($breakpoint-MD) {
+  }
+
+  &--default {
+    background-color: $colour-Grey_Alabaster;
+  }
+
+  &--alt {
+  }
+}
+
+.c-search-results-slice__refine-menu {
+
+  &.is-closed {
+
+    .js & {
+      display: none;
+
+      @include breakpoint($breakpoint-MD) {
+        display: block; /* [1] */
+      }
+    }
+  }
+
+  &.is-open {
+
+    .js & {
+      @include elevation(1);
+      position: absolute;
+      right: $whitespace-Gutter-single;
+      left: 0;
+      z-index: $zindex-SearchResultsSlice_RefineMenu;
+      display: block;
+      padding-right: $whitespace-Gutter-double;
+      padding-left: $whitespace-Gutter-double;
+      margin-bottom: $whitespace-VR-landmark;
+      background-color: $colour-Grey_Alabaster;
+
+      @include breakpoint($breakpoint-MD) {
+        @include elevation(0);
+        position: static; /* [1] */
+        padding-right: 0;
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &--default {
+
+    &.is-open {
+
+      .js & {
+        top: -$whitespace-VR-separate * 2;
+      }
+    }
+  }
+
+  &--alt {
+
+    &.is-open {
+
+      .js & {
+        top: -$whitespace-VR-landmark;
+
+        @include breakpoint($breakpoint-MD) {
+          background-color: $colour-White;
+        }
+      }
+    }
+  }
+
+}
+
+/* section */.c-search-results-slice__refine-inner {
+  padding-bottom: $whitespace-VR-separate;
+
+  @include breakpoint($breakpoint-MD) {
+    padding-bottom: $whitespace-VR-landmark;
+  }
+
+  @include breakpoint($breakpoint-ML) {
+    padding-right: $whitespace-Gutter-single;
+  }
+}
+
+.c-search-results-slice__results {/* [3] */
+}
+
+.c-search-results-slice__results-inner {
+  padding-bottom: $whitespace-VR-landmark;
+
+  @include breakpoint($breakpoint-ML) {
+    padding-left: $whitespace-Gutter-single;
+  }
+}

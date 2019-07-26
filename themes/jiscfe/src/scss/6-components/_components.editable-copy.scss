@@ -1,0 +1,218 @@
+/* ## Editable copy
+   ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ *
+ * 1. Used as a container for any editable copy, ie that entered by CMS.
+ * 2. Used when the editable copy is on a light background.
+ * 3. Used when the editable copy is on a dark background.
+ * 4. 'sup' is styled by the browser.
+ */
+
+.c-editable-copy { /* [1] */
+
+  &--light-bg {/* [2] */
+    color: $colour-Grey_MineShaft-light;
+  }
+
+  &--dark-bg {/* [3] */
+    color: $colour-White;
+  }
+
+  sup {
+    /* [4] */
+  }
+}
+
+
+/* ### Content sectioning
+   -------------------------------------------------------------------------- */
+
+/* #### Headings
+   .......................................................................... */
+
+.c-editable-copy h1 {
+  @include typo-Tuba;
+  margin-top: $whitespace-VR-landmark;
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+.c-editable-copy h2 {
+  @include typo-Euphonium;
+  margin-top: $whitespace-VR-landmark;
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.c-editable-copy h3 {
+  @include typo-Baritone;
+  margin-top: $whitespace-VR-landmark;
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+.c-editable-copy h4 {
+  @include typo-Tenor
+  margin-top: $whitespace-VR-landmark;
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.c-editable-copy h5 {
+  @include typo-Horn;
+  margin-top: $whitespace-VR-separate;
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+.c-editable-copy h6 {
+  @include typo-Flugelhorn;
+  margin-top: $whitespace-VR-separate;
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+
+/* ### Text content
+   -------------------------------------------------------------------------- */
+
+/* #### Body copy
+   .......................................................................... */
+
+.c-editable-copy p {
+  @include typo-BodyCopy;
+  margin-top: $whitespace-VR-separate;
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+/* #### Description lists
+   .......................................................................... */
+
+.c-editable-copy dl {
+}
+
+.c-editable-copy dt {
+  @include typo-BodyCopy;
+  margin-top: $whitespace-VR-separate;
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+.c-editable-copy dd {
+  @include typo-BodyCopy;
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+/* #### Ordered and unordered Lists
+   .......................................................................... */
+.c-editable-copy ol,
+.c-editable-copy ul {
+  padding-left: $whitespace-Gutter-quad;
+  margin-top: $whitespace-VR-separate;
+  list-style: none;
+
+  ol,
+  ul {
+    margin-top: 0;
+  }
+}
+
+.c-editable-copy li {
+  @include typo-BodyCopy;
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+.c-editable-copy ol li {
+  margin-top: $whitespace-VR-associate;
+  list-style-position: outside;
+  list-style-type: decimal;
+}
+
+.c-editable-copy ul li {
+  margin-top: $whitespace-VR-associate;
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.c-editable-copy ol ol li,
+.c-editable-copy ul ol li {
+  margin-top: $whitespace-VR-associate;
+  list-style-type: lower-latin;
+  list-style-position: outside;
+}
+
+.c-editable-copy ol ol ol li,
+.c-editable-copy ol ul ol li,
+.c-editable-copy ul ol ol li,
+.c-editable-copy ul ul ol li {
+  margin-top: $whitespace-VR-associate;
+  list-style-type: lower-roman;
+  list-style-position: outside;
+}
+
+.c-editable-copy ol ul li,
+.c-editable-copy ul ul li {
+  margin-top: $whitespace-VR-associate;
+  list-style-type: circle;
+  list-style-position: outside;
+}
+
+.c-editable-copy ol ol ul li,
+.c-editable-copy ol ul ul li,
+.c-editable-copy ul ol ul li,
+.c-editable-copy ul ul ul li {
+  margin-top: $whitespace-VR-associate;
+  list-style-type: square;
+  list-style-position: outside;
+}
+
+
+/* ### Inline text semantics
+   -------------------------------------------------------------------------- */
+
+.c-editable-copy abbr[title] {
+  @include u-Abbr();
+}
+
+/* #### Links
+   .......................................................................... */
+
+.c-editable-copy--light-bg a {
+  @include link-LightBg(
+    $visited-style: true,
+    $has-surrounding-text: true 
+  );
+}
+
+.c-editable-copy--dark-bg a {
+  @include link-DarkBg(
+    $visited-style: true,
+    $has-surrounding-text: true 
+  );
+}
+

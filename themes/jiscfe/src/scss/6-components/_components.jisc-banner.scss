@@ -1,0 +1,73 @@
+/* ## Jisc banner
+ * ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ *
+ * 1. Explicitly set height of component, but note if this was not set the
+ *    height would be determined by the height of the Jisc logo.
+ * 2. Using Ellipses technique to hide the overflow for consistency with the
+ *    Jisc focussed masthead, even though it is very unlikely the content will
+ *    overflow the viewport and require the ellipsis. Otherwise the links have
+ *    a different height from the Jisc focussed masthead when focussed on, as
+ *    top and bottom overflow is hidden.
+ * 3. Required to extend the link outline to the right hand side, as the
+ *    Ellipses mixin stops the link outline being visible on the right hand
+ *    side when the ellipsis is not visible.
+ */
+
+.c-jisc-banner {
+  @include u-Clearfix;
+  color: $colour-White;
+  background-color: $colour-Grey_MineShaft-light;
+
+  @media print {
+    color: $colour-Grey_MineShaft-light;
+    background-color: transparent;
+  }
+}
+
+.c-jisc-banner__inner {
+  display: flex;
+  height: 3.6rem; /* [1] */
+  align-items: center;
+}
+
+.c-jisc-banner__heading {
+  @include u-Visuallyhidden;
+}
+
+/* a */.c-jisc-banner__link {
+  @include link-DarkBg(
+    $visited-style: false,
+    $has-surrounding-text: false 
+  );
+  font-family: $font-Roboto;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+}
+
+.c-jisc-banner__jisc-brand {
+}
+
+.c-jisc-banner__jisc-login {
+  @include u-Ellipses; /* [2] */
+  padding-right: $whitespace-Border_Width-thick; /* [3] */
+  margin-right: -$whitespace-Border_Width-thick; /* [3] */
+  margin-left: $whitespace-Gutter-triple;
+  text-align: right;
+  flex: 1 0;
+
+  @media print {
+    display: none;
+  }
+}
+
+.c-jisc-banner__jisc-login-name-text {
+  @include u-Visuallyhidden();
+
+  @include breakpoint($breakpoint-MD) {
+    @include u-Visuallyhidden-undo();
+  }
+}

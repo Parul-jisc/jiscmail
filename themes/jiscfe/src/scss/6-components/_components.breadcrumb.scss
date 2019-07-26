@@ -1,0 +1,87 @@
+/* ## Breadcrumb
+ * ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ *
+ * Notes:
+ * 1. Required to fix a bug in the following browsers where the space character 
+ *    in the HTML markup before the 'li' is rendered, even when :before has no 
+ *    no content (content: "";):
+ *    - TODO Check Edge
+ *    - Firefox
+ *    - TODO Check IE
+ *    - Safari
+ */
+
+/* nav */.c-breadcrumb {
+  @include u-Clearfix();
+}
+
+/* p */.c-breadcrumb__title {
+  @include u-Visuallyhidden();
+}
+
+/* ul */.c-breadcrumb__list {
+  margin-top: $whitespace-VR-associate;
+}
+
+/* li */.c-breadcrumb__item {
+  display: inline;
+  margin-top: $whitespace-VR-associate;
+  font-family: $font-Roboto;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+
+  &:before {
+    margin-right: .35em;
+    margin-left: .35em;
+    font-family: $font-Roboto;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+    color: $colour-Grey_SilverChalice-dark;
+    content: ">";
+  }
+
+  &--back {
+
+    &:before {
+      margin-left: 0;
+      content: "\AB";
+
+      @include breakpoint($breakpoint-XS) {
+        margin-left: .35em;
+        content: ">";
+      }
+    }
+  }
+
+  &--first {
+
+    &:before {
+      display: none; /* [1] */
+      content: "";
+    }
+  }
+
+  &--hidden {
+    display: none;
+
+    @include breakpoint($breakpoint-XS) {
+      display: inline;
+    }
+  }
+}
+
+/* a, span */.c-breadcrumb__copy {
+  color: $colour-Grey_Grey-dark;
+
+  &--link {
+    @include link-LightBg(
+      $visited-style: true,
+      $has-surrounding-text: true
+    );
+  }
+}

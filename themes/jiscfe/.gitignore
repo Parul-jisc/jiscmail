@@ -1,0 +1,12 @@
+# Ignore macOS system files.
+**/.DS_Store
+
+# Ignore built files.
+dist/
+
+# Ignore node modules.
+node_modules/
+
+# Ignore output log that is generated from
+# running deploy commands.
+output.log

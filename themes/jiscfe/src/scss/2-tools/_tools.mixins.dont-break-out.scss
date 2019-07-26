@@ -1,0 +1,38 @@
+// ## Don't break out
+// ==========================================================================
+
+//
+// Handling long words and URLs (forcing breaks, hyphenation).
+//
+// "Handling Long Words and URLs (Forcing Breaks, Hyphenation, Ellipsis, etc)":
+// https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+// Last updated: 2018-04-03.
+// Accessed: 2018-06-16.
+//
+// "Can I use"
+// https://caniuse.com
+// Accessed: 2018-06-16.
+//
+// 1. Adds a hyphen where the word breaks, if supported (No Blink). 
+// 2. It is advisable to set the @lang attribute on the HTML element to enable 
+//    hyphenation support and improve accessibility.
+// 3. This is the dangerous one in WebKit, as it breaks things wherever.
+// 4. Chrome, Safari and other WebKit/Blink browsers also support the 
+//    unofficial "break-word" value which is treated like "word-wrap: 
+//    break-word".
+// 5. Instead use this non-standard one.
+// 6. These are technically the same, but use both. 
+// 7. "word-wrap" is required for IE11, >= Edge16. They have partial support 
+//    for "overflow-wrap": ie require the legacy name "word-wrap" (rather than 
+//    "overflow-wrap") to work.
+// 8. "-moz" vendor prefix is not required for the browsers we support.
+// 9. "-ms" vendor prefix is not required for the browsers we support.
+//
+
+@mixin u-DontBreakOut() {
+  hyphens: auto; // [1, 2, 8]
+  word-break: break-all; // [3, 9]
+  word-break: break-word; // [4]
+  word-wrap: break-word; // [6, 7]
+  overflow-wrap: break-word; // [6]
+}

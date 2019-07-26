@@ -1,0 +1,57 @@
+/* ## Section navigation
+ * ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ */
+
+
+.c-section-navigation {
+  @include u_Clearfix();
+  padding-right: $whitespace-Gutter-double;
+  padding-bottom: $whitespace-VR-landmark;
+  padding-left: $whitespace-Gutter-double;
+  margin-top: $whitespace-VR-separate * 2;
+  border: $whitespace-Border_Width-thin solid $colour-Grey_Alto;
+}
+
+.c-section-navigation__abbr {
+  @include u-Abbr-undo();// TODO: @zzcgulm. Sort dotted underline.
+}
+
+.c-section-navigation__title {
+  font-family: $font-Roboto;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  margin-top: $whitespace-VR-landmark;
+}
+
+.c-section-navigation__list {
+
+  #{&} {
+    margin-left: $whitespace-Gutter-double;
+  }
+}
+
+.c-section-navigation__item {
+  font-family: $font-Roboto;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  margin-top: $whitespace-VR-separate;
+}
+
+.c-section-navigation__copy {
+
+  &--current {
+    color: $colour-Grey_Grey-dark;
+  }
+
+  &--link {
+    @include link-LightBg(
+      $visited-style: true,
+      $has-surrounding-text: true
+    );
+  }
+}

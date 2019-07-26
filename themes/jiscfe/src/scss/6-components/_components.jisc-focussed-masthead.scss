@@ -1,0 +1,158 @@
+/* ## Jisc focussed masthead
+ * ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ *
+ * 1. Explicitly set height of component, but note if this was not set the
+ *    height would be determined by the height of the Jisc logo.
+ * 2. This is required to get the link to be same height as "you are in" links
+ *    when focused on, as top and bottom overflow is hidden.
+ * 3. Gives a gap of .9rem between text and the anonymous replaced element
+ *    character, even though visually it may appear as more than 9px, owing to
+ *    the whitespace in the anonymous replaced element and whitespace to the
+ *    right of the ellipsis.
+ */
+
+/* header */.c-jisc-focussed-masthead {
+  @include u-Clearfix;
+  color: $colour-White;
+  background-color: $colour-Grey_MineShaft-light;
+
+  @media print {
+    color: $colour-Grey_MineShaft-light;
+    background-color: transparent;
+  }
+}
+
+.c-jisc-focussed-masthead__inner {
+  display: flex;
+  align-items: center;
+  height: 5.4rem; /* [1] */
+}
+
+.c-jisc-focussed-masthead__heading {
+  @include u-Visuallyhidden;
+}
+
+/* a */.c-jisc-focussed-masthead__link {
+  @include link-DarkBg(
+    $visited-style: false,
+    $has-surrounding-text: false 
+  );
+}
+
+.c-jisc-focussed-masthead__jisc-brand {
+  flex-shrink: 0;
+}
+
+.c-jisc-focussed-masthead__you-are-in {
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.c-jisc-focussed-masthead__you-are-in-list {
+  display: flex;
+  margin-left: $whitespace-Gutter-single;
+
+  @include breakpoint($breakpoint-MD) {
+    margin-left: $whitespace-Gutter-double;
+  }
+}
+
+.c-jisc-focussed-masthead__you-are-in-item {
+  @include u-Ellipses;
+  font-family: $font-Roboto;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  white-space: nowrap;
+
+  @include breakpoint($breakpoint-MD) {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+  }
+
+  .c-jisc-focussed-masthead--is-section & {
+  }
+
+  .c-jisc-focussed-masthead--is-site & {
+  }
+
+  &:before {
+    font-family: $font-Roboto;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+    color: $colour-Grey_SilverChalice-dark;
+
+    @include breakpoint($breakpoint-MD) {
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+    }
+  }
+
+  &--section-title {
+
+    &:before {
+
+      .c-jisc-focussed-masthead--is-section & {
+        margin-right: .35em; /* [3] */
+        content: "\AB";
+
+        @include breakpoint($breakpoint-XS) {
+          margin-left: $whitespace-Gutter-single;
+          content: ">";
+        }
+
+        @include breakpoint($breakpoint-MD) {
+          margin-right: .25em; /* [3] */
+        }
+      }
+    }
+  }
+
+  &--site-title {
+
+    .c-jisc-focussed-masthead--is-section & {
+      display: none;
+
+      @include breakpoint($breakpoint-XS) {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.c-jisc-focussed-masthead__jisc-login {
+  overflow: hidden; /* [2] */
+  flex-shrink: 0;
+  margin-left: $whitespace-Gutter-single;
+
+  @include breakpoint($breakpoint-XS) {
+    margin-left: $whitespace-Gutter-double;
+  }
+
+  @include breakpoint($breakpoint-MD) {
+    margin-left: $whitespace-Gutter-triple;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+.c-jisc-focussed-masthead__jisc-login-item {
+  font-family: $font-Roboto;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+}
+
+.c-jisc-focussed-masthead__jisc-login-name-text {
+  @include u-Visuallyhidden();
+
+  @include breakpoint($breakpoint-MD) {
+    @include u-Visuallyhidden-undo();
+  }
+}

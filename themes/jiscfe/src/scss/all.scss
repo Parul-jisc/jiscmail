@@ -1,0 +1,274 @@
+/* ==========================================================================
+   Front-end foundations
+   ========================================================================== */
+
+/**
+ * Front-end foundations, by Jisc Digital team.
+ */
+
+/**
+ * This provides the global scope (S)CSS for any site using the Jisc Drupal 8 
+ * foundations: this (S)CSS must be the same across sites, else predictability 
+ * is jeopardized and regressions, that may be subtle and hard to spot, may 
+ * occur.
+ *
+ * a) We include partials in alphabetical order, else predictability 
+ *    is jeopardized and regressions, that may be subtle and hard to spot, may 
+ *    occur.
+ * 
+ * b) We do not include vendor prefixes in author style sheets; The SCSS must 
+ *    be run through Autoprefixer on build.
+ *
+ * c) We do not use a separate print style sheet: print styles msut be included 
+ *    in the relevant partial using a print media query.
+ */
+
+/**
+ * CONTENTS
+ *
+ * 0. VENDOR
+ * Font Awesome 5.........Import all Font Awesome SCSS as no-JS fallback for 
+ *                        SVG & JS implementation (which includes all Font 
+ *                        Aweosme styles by default). 
+ *
+ * 1. SETTINGS
+ * HTML font-size.........Allows REM sizing.
+ * Breakpoints............Breakpoints to be used with min-width media query 
+ *                        mixin.
+ * Colours................Jisc approved colours.
+ * Fonts..................Jisc approved fonts and font stacks.
+ * Global.................Miscellaneous variables and settings. Don't you just 
+ *                        love a "miscellaneous" bucket?
+ * Images.................Image variables, eg list bullet icons.
+ * Whitespace.............Border, guttering and vertical rhythm.
+ * Z-index................Manage Z-index values via variables.
+ *
+ * 2. TOOLS
+ * Abbreviation...........Style ABBR element.
+ * Asymmetrical Block.....Set the 50/50 colour/transparent background on 
+ *   Parent Background    asymmetrical blocks.
+ * Breakpoints............Min-width media query mixin.
+ * Clearfix...............Micro clearfix mixin.
+ * Don't break out........Mixin for handling long words and URLs (forcing breaks, 
+ *                        hyphenation).
+ * Ellipses...............Mixin for preventing overflow with ellipsis.
+ * Fonts..................Mixin for Jisc approved fonts.
+ * Links..................Mixins for different link styles.
+ * Typography.............Mixin for typography styles.
+ * Visuallyhidden.........Mixin to quickly apply accessible hiding to elements.
+ *
+ * 3. GENERIC
+ * Box-sizing.............Better default box-sizing.
+ * Normalize.css..........A level playing field using @necolas' Normalize.css.
+ *                        For ease of use we update this manually and copy the 
+ *                        CSS file from 
+ *                        https://necolas.github.io/normalize.css/
+ * Reset..................A tiny reset to complement Normalize.css.
+ * Shared.................Sensibly and tersely share some global commonalities.
+ *
+ * 4. ELEMENTS
+ * Elements...............Base styles.
+ *
+ * 5. OBJECTS
+ * Grid...................Generic sitewide grid.
+ * Layout.................Generic sitewide layout.
+ *
+ * 6.1 COMPONENTS: CORE
+ * Billboard slice........First element on landing pages, used for scene 
+ *                        setting. One per page. Overview of the page.
+ * Boombox list slice.....TODO: @zzcgulm.
+ * Boombox slice..........Singular: call to action; used to punctuate the end 
+ *                        of the main content and drive the user to a primary 
+ *                        action.
+ * Box....................TODO: @zzcgulm.
+ * Breadcrumb.............TODO: @zzcgulm.
+ * Buttons................Used to create buttons on our sites.
+ *                        Can be applied to link, button, and input elements.
+ * Card...................TODO: @zzcgulm.
+ * Editable copy..........Used as a wrapper for copy to be added by the CMS.
+ * Feature slice..........Builds the main narrative of the page. Must follow a 
+ *                        hero element. Used in multiples - group of >=3 with 
+ *                        alternating colours.
+ * Footnote...............A footnote is a string of text placed at the bottom 
+ *                        of a page. The note can provide an author's comments 
+ *                        on the main text or citations of a reference work in 
+ *                        support of the text.
+ * Generic slice..........Used as a wrapper for copy to be added by templates.
+ * Jisc banner............Our simple branding device for all our sites.
+ * Jisc focussed masthead.Jisc focussed masthead is an alternative masthead 
+ *                        pattern for user interfaces where maximum screen 
+ *                        real-estate is required.
+ * Jisc header............TODO: @zzcgulm.
+ * Jisc footer............Standard Jisc footer for all our sites.
+ * Jisc logo..............Standard Jisc logo.
+ * Main content skiplink..Skip to main content link to be included on all 
+ *                        pages that have main content. 
+ * Page header slice......TODO: @zzcgulm.
+ * Section navigation.....TODO: @zzcgulm.
+ * Speakerbox slice.......TODO: @zzcgulm.
+ * Spotlight slice........Contextual: supporting main narrative; not for 
+ *                        wayfinding (but likely to link off elsewhere if 
+ *                        interested). Singular - used to punctuate the end of 
+ *                        the main content.
+ * Structure..............Sitewide structure.
+ * Table..................TODO @zzcgulm.
+ * Washing line           Washing line.
+ *
+ * 7. UTILITIES
+ */
+
+
+
+
+
+/* ==========================================================================
+   # 0. Vendor
+   ========================================================================== */
+
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/regular';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
+
+
+
+
+
+// ==========================================================================
+// # 1. Settings
+// ==========================================================================
+
+/*
+ * Set font-size before variables, so we can use the correct REM values for 
+ * variables.
+ *
+ * "Font sizing with rem":
+ * https://snook.ca/archives/html_and_css/font-size-with-rem
+ * 
+ * 1.   We use 10px as 1rem equivalent:
+ * 1.1. As most browsers set 100% as 16px, thus 10px is 62.5%.
+ * 1.2. We use this value for consistency with jisc.ac.uk.
+ * 1.3. And as it's an easy number to use.
+ */
+
+html {
+  font-size: 62.5%; /* [1] */
+}
+
+//
+// We use the ECSS class naming convention for variables:
+// .[namespace][-VariableName][_VariableSection][-variant-flag]
+// See already defined variables for examples.
+//
+
+@import "1-settings/settings.variables.breakpoints";
+@import "1-settings/settings.variables.colours";
+@import "1-settings/settings.variables.fonts";
+@import "1-settings/settings.variables.global";
+@import "1-settings/settings.variables.whitespace";
+@import "1-settings/settings.variables.z-index";
+
+
+
+
+
+// ==========================================================================
+// # 2. Tools
+// ==========================================================================
+
+@import "2-tools/tools.mixins.abbr";
+@import "2-tools/tools.mixins.asymmetrical-block-parent-background";
+@import "2-tools/tools.mixins.breakpoints";
+@import "2-tools/tools.mixins.clearfix";
+@import "2-tools/tools.mixins.dont-break-out";
+@import "2-tools/tools.mixins.ellipses";
+@import "2-tools/tools.mixins.jisc-logo";
+@import "2-tools/tools.mixins.links";
+@import "2-tools/tools.mixins.shadows";
+@import "2-tools/tools.mixins.typography";
+@import "2-tools/tools.mixins.visuallyhidden";
+
+
+
+
+
+/* ==========================================================================
+   # 3. Generic
+   ========================================================================== */
+
+@import "3-generic/generic.box-sizing";
+@import "3-generic/generic.normalize";
+@import "3-generic/generic.reset";
+
+
+
+
+
+/* ==========================================================================
+   # 4. Elements
+   ========================================================================== */
+
+@import "4-elements/elements.elements";
+
+
+
+
+
+/* ==========================================================================
+   # 5. Objects
+   ========================================================================== */
+
+@import "5-objects/objects.grid";
+@import "5-objects/objects.layout";
+
+
+
+
+
+/* ==========================================================================
+   # 6.1 Components: Core
+   ========================================================================== */
+
+@import "6-components/components.billboard-slice";
+@import "6-components/components.boombox-list-slice";
+@import "6-components/components.boombox-slice";
+@import "6-components/components.box";
+@import "6-components/components.breadcrumb";
+@import "6-components/components.buttons";
+@import "6-components/components.card";
+@import "6-components/components.editable-copy";
+@import "6-components/components.feature-slice";
+@import "6-components/components.footnote";
+@import "6-components/components.generic-slice";
+@import "6-components/components.jisc-banner";
+@import "6-components/components.jisc-focussed-masthead";
+@import "6-components/components.jisc-footer";
+@import "6-components/components.jisc-header";
+@import "6-components/components.jisc-logo";
+@import "6-components/components.main-content-skiplink";
+@import "6-components/components.page-header-slice";
+@import "6-components/components.search-results";
+@import "6-components/components.section-navigation";
+@import "6-components/components.speakerbox-slice";
+@import "6-components/components.spotlight-slice";
+@import "6-components/components.structure";
+@import "6-components/components.table";
+@import "6-components/components.washing-line";
+
+
+
+/* ==========================================================================
+   # 6.2 Components: Site-specific
+   ========================================================================== */
+
+/*
+ * This is empty in Front-end foundations but exists to define the place that 
+ * site-specific components must be called in the architecture.
+ */
+
+
+
+
+/* ==========================================================================
+   # 7. Utilities
+   ========================================================================== */

@@ -1,0 +1,21 @@
+// ## Breakpoint
+// ==========================================================================
+
+//
+// Mixin to calculate breakpoints, using min-width.
+//
+// 
+// @include breakpoint($breakpoint) {
+//
+//   .usage {
+//     ...
+//   }
+// }
+//
+
+@mixin breakpoint($breakpoint) {
+
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}

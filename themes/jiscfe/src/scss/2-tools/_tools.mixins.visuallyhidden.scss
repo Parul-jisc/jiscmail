@@ -1,0 +1,49 @@
+// ## Visuallyhidden (visually hidden)
+// ==========================================================================
+
+//
+// Mixin to quickly apply accessible hiding to elements.
+//
+// Hide only visually, but have it available for screen readers, aka 
+// "visually hidden" or "visuallyhidden":
+// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+//
+
+@mixin u-Visuallyhidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+//
+// Extends u-Visuallyhidden to allow the element to be focusable when navigated 
+// to via the keyboard:
+// https://www.drupal.org/node/897638
+//
+
+@mixin u-Visuallyhidden_Focusable() {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+//
+// Undo visually hidden.
+//
+
+@mixin u-Visuallyhidden-undo() {
+  clip: auto;
+  height: auto;
+  margin: auto;
+  overflow: unset;
+  position: static;
+  width: auto;
+}

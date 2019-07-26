@@ -1,0 +1,47 @@
+/* ## Jisc logo
+ * ========================================================================== */
+
+.c-jisc-logo {
+//  display: inline-block; TODO: @zzcgulm When we have the Jisc logo in other contexts check this is required.
+//  line-height: 1; TODO: @zzcgulm When we have the Jisc logo in other contexts check this is required.
+
+  &:focus {
+    outline: $whitespace-Border_Width-thick solid $colour-Yellow_Dandelion; // TODO: @zzcgulm    outline: $link-Outline;
+  }
+
+  &:hover {
+    opacity: .7; // TODO: @zzcgulm Convert to variable and/or mixin?
+  }
+}
+
+.c-jisc-logo__img { 
+  @include c-JiscLogo(default);
+
+  //
+  // Box-shadow is on image, not link, because it is affected by 
+  // line-height.
+  //
+  // TODO Consistent way of doing box-shadow.
+  //
+// TODO: @zzcgulm Are we keeping box-shadow?  box-shadow: 0 .1rem .2rem rgba($colour-Black, .2);
+
+  &--jisc-banner {
+    @include c-JiscLogo(jisc-banner);
+  }
+
+  &--jisc-focussed-masthead {
+    @include c-JiscLogo(jisc-focussed-masthead);
+
+    @include breakpoint($breakpoint-MD) {
+      @include c-JiscLogo(jisc-focussed-masthead--MD);
+    }
+  }
+
+  &--jisc-footer {
+    @include c-JiscLogo(jisc-footer);
+
+    @include breakpoint($breakpoint-MD) {
+      @include c-JiscLogo(jisc-footer--MD);
+    }
+  }
+}

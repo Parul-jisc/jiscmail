@@ -1,0 +1,108 @@
+// ## Colours
+// ==========================================================================
+
+//
+// We manage colour variables using a sustainable methodology.
+//
+// Technique: "Sass Color Variables That Don't Suck"
+// Landon Schropp, 2014-05-12 
+// https://davidwalsh.name/sass-color-variables-dont-suck
+//
+// Tool to generate colour names:
+// http://chir.ag/projects/name-that-color/
+//
+// Tip: Convert US English spellings to British English.
+//
+
+
+// ### Colour name variables
+// --------------------------------------------------------------------------
+
+//
+// For usage notes see:
+// https://docs.google.com/spreadsheets/d/1bFen5P3o0wCfCt1C2ak7dDuSiz87cPsMppY5g94uuC4/edit#gid=0
+//
+
+// #### Type: UI
+// ..........................................................................
+
+$colour-Black:                            #000;
+$colour-Grey_CodGrey-dark:                #0d0d0d;
+$colour-Grey_CodGrey-light:               #191919;
+$colour-Grey_MineShaft-dark:              #262626;
+$colour-Grey_MineShaft-light:             #333333;
+$colour-Grey_Tundora-dark:                #404040;
+$colour-Grey_Tundora-light:               #4c4c4c;
+$colour-Grey_Scorpion:                    #595959;
+$colour-Grey_DoveGrey-dark:               #666;
+$colour-Grey_DoveGrey-light:              #737373;
+$colour-Grey_Grey-dark:                   #7f7f7f;
+$colour-Grey_Grey-light:                  #8c8c8c;
+$colour-Grey_DustyGrey:                   #999;
+$colour-Grey_SilverChalice-dark:          #a6a6a6;
+$colour-Grey_SilverChalice-light:         #b2b2b2;
+$colour-Grey_Silver-dark:                 #bfbfbf;
+$colour-Grey_Silver-light:                #ccc;
+$colour-Grey_Alto:                        #d9d9d9;
+$colour-Grey_Mercury:                     #e5e5e5;
+$colour-Grey_Concrete:                    #f2f2f2;
+$colour-Grey_Alabaster:                   #f7f7f7;
+$colour-White:                            #fff;
+
+// #### Type: Typography
+// ..........................................................................
+
+$colour-Blue_DeepCerulean:                #007aaa;
+$colour-Blue_BahamaBlue:                  #069;
+$colour-Blue_Orient:                      #00557f;
+$colour-Purple_FuchsiaBlue:               #75b;
+$colour-Red_GuardsmanRed:                 #c00;
+$colour-Yellow_Dandelion:                 #fd6;
+
+// #### Type: Theme
+// ..........................................................................
+
+$colour-Red_RedRibbon-jisc-vivid-pink:    #e50e45; // Red ribbon   = Jisc brand colour "Jisc Vivid Pink"
+$colour-Pink_Razzmatazz-jisc-pink:        #ce0f69; // Razzmatazz   = Jisc brand colour "Jisc Pink"
+$colour-Purple_Disco-jisc-grape:          #8d1558; // Disco        = Jisc brand colour "Jisc Grape"
+$colour-Purple_HoneyFlower-jisc-purple:   #6D2077; // Honey flower = Jisc brand colour "Jisc Purple"
+$colour-Blue_BlueZodiac-jisc-navy:        #0d224c; // Blue zodiac  = Jisc brand colour "Jisc Navy"
+$colour-Blue_Lochmara-jisc-blue:          #007dba; // Lochmara     = Jisc brand colour "Jisc Blue"
+$colour-Green_Teal-jisc-jade:             #00857d; // Teal         = Jisc brand colour "Jisc Jade"
+$colour-Green_FunGreen-jisc-green:        #006938; // Fun green    = Jisc brand colour "Jisc Green"
+$colour-Orange_WebOrange-jisc-yellow:     #f8a800; // Web orange   = Jisc brand colour "Jisc Yellow"
+
+
+
+$colour-Blue_PacificBlue:                 #0092cb;
+$colour-Green_ButteredRum:                #8c930d;
+$colour-Green_Dell:                       #386b1f;
+$colour-Green_DeepSea:                    #00856f;
+$colour-Orange_Jisc:                      #e85e13;
+$colour-Orange_TiaMaria:                  #c65010;
+$colour-Purple_Hibiscus:                  #a22578;
+$colour-Purple_Plum:                      #737;
+$colour-Red_AlizarinCrimson:              #e22a2e;
+$colour-Red_MaroonFlush:                  #d72250;
+$colour-Red_Shiraz:                       #bc0c1d;
+$colour-Yellow_Saffron:                   #f2b032;
+
+// #### Type: Alerts
+// ..........................................................................
+
+$colour-Blue_Calypso:                     #31708f;
+$colour-Blue_PrussianBlue:                #002443;
+$colour-Blue_LinkWater:                   #d9edf7;
+$colour-Blue_MintTulip:                   #bce8f1;
+$colour-Green_Killarney:                  #3c763d;
+$colour-Green_DeepFir:                    #002a00;
+$colour-Green_BerylGreen:                 #d6e9c6;
+$colour-Green_Peppermint:                 #dff0d8;
+$colour-Orange_PottersClay:               #8a6d3b;
+$colour-Orange-Cola:                      #3e2100;
+$colour-Orange_Champagne:                 #faebcc;
+$colour-Orange_PearlLusta:                #fcf8e3;
+$colour-Red_AppleBlossom:                 #a94442;
+$colour-Red_Rosewood:                     #5d0000;
+$colour-Red_OysterPink:                   #ebccd1;
+$colour-Red_Bizarre:                      #f2dede;

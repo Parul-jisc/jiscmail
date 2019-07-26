@@ -1,0 +1,112 @@
+/* ## Boombox list slice
+ * ========================================================================== */
+
+/*
+ * Notes:
+ * 1. Ref: Font Awesome: "CSS Pseudo-elements".
+ *    https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements
+ *    Accessed 2018-10-11.
+ * 2. Violating the ECSS "Thou shalt have a single source of truth for all key 
+ *    selectors" rule here as there is no way to use a single source of truth 
+ *    for the li:before selector in SCSS in this insrance.
+ *    Ref: ECSS: "Chapter 8. The Ten Commandments of Sane Style Sheets"
+ *    http://ecss.io/chapter8.html#h-H2_1
+ *    Accessed: 2018-10-15.
+ *
+ * CMS implementation requirements:
+ * a. The content that is the only child of this class is content editable. 
+ *    Accepted elements are:
+ *    Plain text
+ *    'a'
+ *    'abbr[title]'
+ *    'strong'
+ * b. Children of this class are content editable. Accepted elements are:
+ *    Plain text
+ *    'a'
+ *    'abbr'
+ *    'p'
+ *    'strong'
+ */
+
+/* section */.c-boombox-list-slice {
+  @include u-Clearfix;
+  padding-bottom: $whitespace-VR-double-landmark;
+  color: $colour-Grey_MineShaft-light;
+  background-color: $colour-White;
+}
+
+/* h2 */.c-boombox-list-slice__title { /* [a] */
+  margin-top: $whitespace-VR-double-landmark;
+  font-family: $font-Roboto;
+  font-size: 3.6rem;
+  font-weight: 400;
+  line-height: 4.5rem;
+  text-align: left;
+
+  a {
+    @include link-LightBg(
+      $visited-style: true,
+      $has-surrounding-text: true
+    );
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.c-boombox-list-slice__copy { /* [b] */
+
+  a {
+    @include link-LightBg(
+      $visited-style: true,
+      $has-surrounding-text: true
+    );
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 400;
+  }
+
+  li {
+    padding-left: $whitespace-Gutter-single * 6;
+    margin-top: $whitespace-VR-landmark;
+    font-family: $font-Roboto;
+    font-size: 2.1rem;
+    font-weight: 300;
+    line-height: 2.7rem;
+
+    &:before { /* [2] */
+      display: inline-block; /* [1] */
+      float: left;
+      width: $whitespace-Gutter-single * 6;
+      margin-left: -($whitespace-Gutter-single * 6);
+      -webkit-font-smoothing: antialiased; /* [1] */
+      font-family: "Font Awesome 5 Free"; /* [1] */
+      font-style: normal; /* [1] */
+      font-variant: normal; /* [1] */
+      font-weight: 900; /* [1] */
+      text-align: center;
+      text-rendering: auto; /* [1] */
+      content: "\f00c"; /* [1] */
+    }
+  }
+
+  &--highlighted {
+
+    li {
+
+      &:before { /* [2] */
+        color: $colour-Orange_Jisc;
+      }
+    }
+  }
+}

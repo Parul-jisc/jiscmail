@@ -1,0 +1,89 @@
+/* ## Boombox slice
+ * ========================================================================== */
+
+/**
+ * Usage: Slice, core.
+ *
+ * CMS implementation requirements:
+ * a. Accepts inline style, intended for background colour, a background image 
+ *    and associated background properties. The 'color' property should not be 
+ *    altered.
+ * b. The content that is the only child of this class is content editable. 
+ *    Accepted elements are:
+ *    Plain text
+ *    'a'
+ *    'abbr[title]'
+ *    'strong'
+ * c. Children of this class are content editable. Accepted elements are:
+ *    Plain text
+ *    'a'
+ *    'abbr'
+ *    'p'
+ *    'strong'
+ * d. The child of this class is configured by the CMS. The only accepted 
+ *    component is:
+ *    Button
+ */
+
+/* section */.c-boombox-slice { /* [a] */
+  @include u-Clearfix;
+  padding-bottom: $whitespace-VR-triple-landmark;
+  color: $colour-White;
+  background-color: $colour-Blue_Orient;
+}
+
+/* h2 */.c-boombox-slice__title { /* [b] */
+  margin-top: $whitespace-VR-triple-landmark;
+  font-family: $font-Roboto;
+  font-size: 3.6rem;
+  font-weight: 400;
+  line-height: 4.5rem;
+  text-align: center;
+
+  a {
+    @include link-DarkBg(
+      $visited-style: true,
+      $has-surrounding-text: true
+    );
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.c-boombox-slice__copy { /* [c] */
+
+  a {
+    @include link-DarkBg(
+      $visited-style: true,
+      $has-surrounding-text: true
+    );
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 400;
+  }
+
+  p {
+    margin-top: $whitespace-VR-separate;
+    font-family: $font-Roboto;
+    font-size: 2.7rem;
+    font-weight: 300;
+    line-height: 3.6rem;
+    text-align: center;
+  }
+}
+
+.c-boombox-slice__cta { /* [d] */
+  margin-top: $whitespace-VR-landmark;
+  text-align: center;
+}

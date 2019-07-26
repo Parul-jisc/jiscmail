@@ -1,0 +1,32 @@
+// ## Jisc logo
+// --------------------------------------------------------------------------
+
+@mixin c-JiscLogo($size) {
+  height: .1rem;// TODO: @zzcgulm Find out size.
+  width: .1rem;// TODO: @zzcgulm Find out size.
+
+  @if $size == jisc-banner {
+    height: 3.6rem;
+    width: 3.6rem;
+  }
+
+  @if $size == jisc-focussed-masthead {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  @if $size == jisc-focussed-masthead--MD {
+    height: 3.6rem;
+    width: 3.6rem;
+  }
+
+  @if $size == jisc-footer {
+    height: 7.2rem;
+    width: 7.2rem;
+  }
+
+  @if $size == jisc-footer--MD {
+    height: 14.4rem;
+    width: 14.4rem;
+  }
+}

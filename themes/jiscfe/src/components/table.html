@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html class="o-layout c-structure no-js" lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicons/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <meta name="apple-mobile-web-app-title" content="Jisc">
+    <link rel="manifest" href="/img/favicons/manifest.json">
+    <link rel="icon" type="image/png" href="/img/favicons/android-chrome-192x192.png" sizes="192x192">
+    <meta name="application-name" content="Jisc">
+    <meta name="msapplication-TileColor" content="#e85e13">
+    <meta name="msapplication-TileImage" content="/img/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#e85e13">
+    <meta name="theme-color" content="#e85e13">
+    <title>Table</title>
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i" rel="stylesheet">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <script src="/js/all.head.min.js"></script>
+  </head>
+
+  <body style="background-color: #fff;">
+
+
+
+
+    <main class="c-structure__main-content" id="main-content" role="main">
+
+
+
+      <div class="c-structure__major-content">
+
+
+
+        <div class="o-layout__container">
+
+
+
+          <h1>Table</h1>
+
+
+
+          <p>While it is not necessary for each table to have a caption, a caption is generally very helpful.</p>
+          <p>Note: <code>strong</code> cannot be used in table headers.</p>
+
+
+
+          <div class="c-table c-table--default">
+            <table class="c-table__table">
+              <caption class="c-table__caption">The default table has cells that are <strong>left aligned</strong></caption>
+              <tr class="c-table__row">
+                <th class="c-table__header" scope="col">Table header cell</th>
+                <th class="c-table__header" scope="col">Table header cell</th>
+                <th class="c-table__header" scope="col">Table header cell</th>
+                <th class="c-table__header" scope="col">Table header cell</th>
+              </tr>
+              <tr class="c-table__row">
+                <th class="c-table__header" scope="row">Table header cell</th>
+                <td class="c-table__cell">Table <strong>data</strong> cell</td>
+                <td class="c-table__cell">Table data cell</td>
+                <td class="c-table__cell">Table data cell</td>
+              </tr>
+              <tr class="c-table__row">
+                <th class="c-table__header" scope="row">Table header cell</th>
+                <td class="c-table__cell">Table data cell</td>
+                <td class="c-table__cell">Table data cell</td>
+                <td class="c-table__cell">Table data cell</td>
+              </tr>
+            </table>
+          </div>
+
+
+
+          <h2>Cell alignment</h2>
+
+          <div class="o-grid">
+            <div class="o-grid__item u-9/12@MD">
+
+              <div class="c-table c-table--default c-table--responsive">
+
+                <table class="c-table__table">
+                  <caption class="c-table__caption">Data table, data is right aligned</caption>
+                  <tr class="c-table__row">
+                    <th class="c-table__header" scope="row"></th>
+                    <td class="c-table__header c-table__header--numeric">[Region] <abbr title="Higher Education">HE</abbr> totals</td>
+                    <td class="c-table__header c-table__header--numeric">Your totals</td>
+                    <td class="c-table__header c-table__header--numeric">Contribution</td>
+                  </tr>
+                  <tr class="c-table__row">
+                    <th class="c-table__header" scope="row">Income</th>
+                    <td class="c-table__cell c-table__cell--numeric">£29,403,451</td>
+                    <td class="c-table__cell c-table__cell--numeric">£85,688</td>
+                    <td class="c-table__cell c-table__cell--numeric">£19,805</td>
+                  </tr>
+                  <tr class="c-table__row">
+                    <th class="c-table__header" scope="row">Research income</th>
+                    <td class="c-table__cell c-table__cell--numeric">£6,424,374</td>
+                    <td class="c-table__cell c-table__cell--numeric">£16,030</td>
+                    <td class="c-table__cell c-table__cell--numeric">£2,120</td>
+                  </tr>
+                  <tr class="c-table__row">
+                    <th class="c-table__header" scope="row"><abbr title="Full-time equivalency">FTE</abbr> students</th>
+                    <td class="c-table__cell c-table__cell--numeric">1,602,241</td>
+                    <td class="c-table__cell c-table__cell--numeric">3,270</td>
+                    <td class="c-table__cell c-table__cell--numeric">£1,734</td>
+                  </tr>
+                  <tr class="c-table__row">
+                    <th class="c-table__header" scope="row">Total</th>
+                    <td class="c-table__cell c-table__cell--numeric"></td>
+                    <td class="c-table__cell c-table__cell--numeric"></td>
+                    <td class="c-table__cell c-table__cell--numeric" scope="row"><strong>£23,658</strong></td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="c-table c-table--default c-table--responsive">
+                <table class="c-table__table">
+                  <caption class="c-table__caption">Data table, data is right aligned, and a header includes a footnote link</caption>
+
+                  <thead class="c-table__head">
+                    <tr class="c-table__row">
+                      <th scope="col" class="c-table__header">Service</th>
+                      <th scope="col" class="c-table__header">Measure <a href="#TODO-1">[1]</a></th>
+                      <th scope="col" class="c-table__header c-table__header--numeric">Amount</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="c-table__body">
+                    <tr class="c-table__row">
+                      <th class="c-table__header" rowspan="2">Digimap Ordnance Survey Collection</th>
+                      <td class="c-table__cell">Value</td>
+                      <td class="c-table__cell c-table__cell--numeric">£230,400.96</td>
+                    </tr>
+                    <tr class="c-table__row">
+                      <td class="c-table__cell">Savings</td>
+                      <td class="c-table__cell c-table__cell--numeric">£76,800.36</td>
+                    </tr>
+                    <tr class="c-table__row">
+                      <th class="c-table__header" rowspan="1">Janet IP connection</th>
+                      <td class="c-table__cell">Savings</td>
+                      <td class="c-table__cell c-table__cell--numeric">£197,199.96</td>
+                    </tr>
+                    <tr class="c-table__row">
+                      <th class="c-table__header" rowspan="2">Jisc Collections</th>
+                      <td class="c-table__cell">Value</td>
+                      <td class="c-table__cell c-table__cell--numeric">£1,457,571.60</td>
+                    </tr>
+                    <tr class="c-table__row">
+                      <td class="c-table__cell">Savings</td>
+                      <td class="c-table__cell c-table__cell--numeric">£971,714.40</td>
+                    </tr>
+                  </tbody>
+
+                  <tfoot class="c-table__foot">
+                    <tr class="c-table__row">
+                      <th class="c-table__header" colspan="2">Subtotal</th>
+                      <td class="c-table__cell c-table__cell--numeric"><strong>£2,953,493.44</strong></td>
+                    </tr>
+                  </tfoot>
+
+                </table>
+              </div>
+
+              <div class="c-table c-table--default c-table--responsive">
+                <table class="c-table__table">
+                  <caption class="c-table__caption">Some tables, eg those with icons in cells, require centrally aligned columns; Icon copy can be hidden using <code>.c-table__vh</code></caption>
+                  <thead class="c-table__head">
+                    <tr class="c-table__row">
+                      <th class="c-table__header c-table__header" scope="col">Service</th>
+                      <th class="c-table__header c-table__header--iconic" scope="col">Included</th>
+                      <th class="c-table__header c-table__header--iconic" scope="col">Optional</th>
+                    </tr>
+                  </thead>
+                  <tbody class="c-table__body">
+                    <tr class="c-table__row">
+                      <td class="c-table__cell"><a href="/certificate-service">Certificate service</a></td>
+                      <td class="c-table__cell c-table__cell--iconic">Access to framework</td>
+                      <td class="c-table__cell c-table__cell--iconic">
+                        <i class="fas fa-check" title="Products purchased are an optional extra" aria-hidden="true"></i>
+                        <span class="c-table__vh">Products purchased are an optional extra</span>
+                      </td>
+                    </tr>
+                    <tr class="c-table__row">
+                      <td class="c-table__cell"><a href="/domain-registry">Domain registry</a></td>
+                      <td class="c-table__cell c-table__cell--iconic">
+                        <i class="fas fa-check" title="Included in your membership" aria-hidden="true"></i>
+                        <span class="c-table__vh">Included in your membership</span>
+                      </td>
+                      <td class="c-table__cell c-table__cell--iconic"></td>
+                    </tr>
+                    <tr class="c-table__row">
+                      <td class="c-table__cell"><a href="/student-voter-registration">Student voter registration</a></td>
+                      <td class="c-table__cell c-table__cell--iconic"></td>
+                      <td class="c-table__cell c-table__cell--iconic">
+                        <i class="fas fa-check has-tooltip" title="Optional extra" aria-hidden="true"></i>
+                        <span class="c-table__vh">Optional extra</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+
+              <h2>Responsiveness</h2>
+
+              <div class="c-table c-table--default c-table--responsive">
+                <table class="c-table__table">
+                  <caption class="c-table__caption">100% width responsive table</caption>
+                  <tr class="c-table__row">
+                    <th class="c-table__header" scope="col">X</th>
+                    <th class="c-table__header" scope="col">A</th>
+                    <th class="c-table__header" scope="col">B</th>
+                    <th class="c-table__header" scope="col">C</th>
+                  </tr>
+                  <tr class="c-table__row">
+                    <th class="c-table__header" scope="row">Y</th>
+                    <td class="c-table__cell">aaaa</td>
+                    <td class="c-table__cell">bbbb</td>
+                    <td class="c-table__cell">cccc</td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="c-table c-table--default">
+                <table class="c-table__table">
+                  <caption class="c-table__caption">100% width non-responsive table</caption>
+                  <tr class="c-table__row">
+                    <th class="c-table__header" scope="col">X</th>
+                    <th class="c-table__header" scope="col">A</th>
+                    <th class="c-table__header" scope="col">B</th>
+                    <th class="c-table__header" scope="col">C</th>
+                  </tr>
+                  <tr class="c-table__row">
+                    <th class="c-table__header" scope="row">Y</th>
+                    <td class="c-table__cell">aaaa</td>
+                    <td class="c-table__cell">bbbb</td>
+                    <td class="c-table__cell">cccc</td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="c-table c-table--default c-table--small">
+                <table class="c-table__table">
+                  <caption class="c-table__caption">Small, ie auto width, non-responsive table</caption>
+                  <tr class="c-table__row">
+                    <th class="c-table__header" scope="col">X</th>
+                    <th class="c-table__header" scope="col">A</th>
+                    <th class="c-table__header" scope="col">B</th>
+                    <th class="c-table__header" scope="col">C</th>
+                  </tr>
+                  <tr class="c-table__row">
+                    <th class="c-table__header" scope="row">Y</th>
+                    <td class="c-table__cell">aaaa</td>
+                    <td class="c-table__cell">bbbb</td>
+                    <td class="c-table__cell">cccc</td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="c-table c-table--default c-table--responsive c-table--small">
+                <table class="c-table__table">
+                  <caption class="c-table__caption">Small, ie auto width, responsive table</caption>
+                  <tr class="c-table__row">
+                    <th class="c-table__header" scope="col">X</th>
+                    <th class="c-table__header" scope="col">A</th>
+                    <th class="c-table__header" scope="col">B</th>
+                    <th class="c-table__header" scope="col">C</th>
+                  </tr>
+                  <tr class="c-table__row">
+                    <th class="c-table__header" scope="row">Y</th>
+                    <td class="c-table__cell">aaaaaaaaaaaa</td>
+                    <td class="c-table__cell">bbbb</td>
+                    <td class="c-table__cell">cccc</td>
+                  </tr>
+                </table>
+              </div>
+
+
+
+              <h2>Setting column widths</h2>
+
+              <p>Tables in 9- and 12-column width parents can have their column widths set:</p>
+              <ul>
+                <li>1/9, 2/9, ..., 9/9</li>
+                <li>1/12, 2/12, ..., 9/12</li>
+              </ul>
+
+              <h3>Heading b</h3>
+
+              <div class="c-table c-table--default c-table--responsive">
+                <table class="c-table__table">
+                  <caption class="c-table__caption">4-2-3</caption>
+
+                  <thead class="c-table__head">
+                    <tr class="c-table__row">
+                      <th scope="col" class="c-table__header u-4/9">Service</th>
+                      <th scope="col" class="c-table__header u-2/9">Measure</th>
+                      <th scope="col" class="c-table__header c-table__header--numeric u-3/9">Amount</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="c-table__body">
+                    <tr class="c-table__row">
+                      <th class="c-table__header u-4/9" rowspan="2">Digimap Ordnance Survey Collection</th>
+                      <td class="c-table__cell u-2/9">Value</td>
+                      <td class="c-table__cell c-table__cell--numeric u-3/9">£230,400.96</td>
+                    </tr>
+                    <tr class="c-table__row">
+                      <td class="c-table__cell u-2/9">Savings</td>
+                      <td class="c-table__cell c-table__cell--numeric u-3/9">£76,800.36</td>
+                    </tr>
+                  </tbody>
+
+                </table>
+              </div>
+
+              <h3>Heading b</h3>
+
+              <div class="c-table c-table--default c-table--responsive">
+                <table class="c-table__table">
+                  <caption class="c-table__caption">4-2-3</caption>
+
+                  <thead class="c-table__head">
+                    <tr class="c-table__row">
+                      <th scope="col" class="c-table__header u-4/9">Service</th>
+                      <th scope="col" class="c-table__header u-2/9">Measure</th>
+                      <th scope="col" class="c-table__header c-table__header--numeric u-3/9">Amount</th>
+                    </tr>
+                  </thead>
+                    <tr class="c-table__row">
+                      <th class="c-table__header u-4/9" rowspan="1">Janet IP connection</th>
+                      <td class="c-table__cell u-2/9">Savings</td>
+                      <td class="c-table__cell c-table__cell--numeric u-3/9">£197,199.96</td>
+                    </tr>
+                    <tr class="c-table__row">
+                      <th class="c-table__header u-4/9" rowspan="2">Jisc Collections</th>
+                      <td class="c-table__cell u-2/9">Value</td>
+                      <td class="c-table__cell c-table__cell--numeric u-3/9">£1,457,571.60</td>
+                    </tr>
+                    <tr class="c-table__row">
+                      <td class="c-table__cell u-2/9">Savings</td>
+                      <td class="c-table__cell c-table__cell--numeric u-3/9">£971,714.40</td>
+                    </tr>
+                  </tbody>
+
+                </table>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="c-table c-table--default">
+            <table class="c-table__table">
+              <caption class="c-table__caption">4-1-3-4</caption>
+              <tr class="c-table__row">
+                <th class="c-table__header u-4/12" scope="col">Table header cell</th>
+                <th class="c-table__header u-1/12" scope="col">Table header cell</th>
+                <th class="c-table__header u-3/12" scope="col">Table header cell</th>
+                <th class="c-table__header u-4/12" scope="col">Table header cell</th>
+              </tr>
+              <tr class="c-table__row">
+                <th class="c-table__header u-4/12" scope="row">Table header cell</th>
+                <td class="c-table__cell u-1/12">Table <strong>data</strong> cell</td>
+                <td class="c-table__cell u-3/12">Table data cell</td>
+                <td class="c-table__cell u-4/12">Table data cell</td>
+              </tr>
+              <tr class="c-table__row">
+                <th class="c-table__header u-4/12" scope="row">Table header cell</th>
+                <td class="c-table__cell u-1/12">Table data cell</td>
+                <td class="c-table__cell u-3/12">Table data cell</td>
+                <td class="c-table__cell u-4/12">Table data cell</td>
+              </tr>
+            </table>
+          </div>
+
+
+
+          <div class="o-grid">
+            <div class="o-grid__item u-9/12@MD">
+
+              <h2>Including copy that comes from another source inside tables</h2>
+
+              <div class="c-table c-table--default c-table--responsive">
+                <table class="c-table__table">
+                   <thead class="c-table__head">
+                    <tr class="c-table__row">
+                      <th class="c-table__header" scope="row">Risk</th>
+                      <th class="c-table__header" scope="col">What this means</th>
+                      <th class="c-table__header" scope="col">Mitigation</th>
+                    </tr>
+                  </thead>
+                  <tbody class="c-table__body">
+                    <tr class="c-table__row">
+                      <th class="c-table__header" scope="row">Startup longevity</th>
+                      <td class="c-table__cell">
+                        <div class="c-table__cell-copy">
+                          <p>As an early stage business, the startup may fail, leaving the product and its users unsupported.</p>
+                          <p><i class="far fa-arrow-alt-circle-right" aria-hidden="true"></i> Impact/likelihood: high/high</p>
+                        </div>
+                      </td>
+                      <td class="c-table__cell">
+                        <div class="c-table__cell-copy">
+                          <p>- Look for external references that provide confidence in team, product, roadmap and future market potential</p>
+                          <p>- Be <strong>selective</strong> about <em>startups</em> you engage with</p>
+                          <p>- Be prepared to provide guidance and support to startups early on</p>
+                          <p>- Discuss arrangements for ongoing support rights in case of business failure</p>
+                          <p><i class="far fa-arrow-alt-circle-right" aria-hidden="true"></i> Mitigated impact/likelihood: medium/medium</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="c-table__row">
+                      <th class="c-table__header" scope="row">Quality of support</th>
+                      <td class="c-table__cell">
+                        <div class="c-table__cell-copy">
+                          <p>Small teams may not have a lot of manpower dedicated to support and would struggle to match established vendors on paper (eg <a href="https://en.wikipedia.org/wiki/24/7_service">24/7 availability</a>).</p>
+                          <p>As an early stage business, the startup may fail, leaving the product and its users unsupported.</p>
+                          <p><i class="far fa-arrow-alt-circle-right" aria-hidden="true"></i> Impact/likelihood: medium/medium</p>
+                        </div>
+                      </td>
+                      <td class="c-table__cell">
+                        <div class="c-table__cell-copy">
+                         <ul>
+                            <li>Agree expectations early on and establish clear communication channels to founders</li>
+                            <li>Organise workshops and onboarding sessions for staff or other users at your institution</li>
+                            <li>Involve IT services so they can provide some of the support</li>
+                          </ul>
+                          <p><i class="far fa-arrow-alt-circle-right" aria-hidden="true"></i> Mitigated impact/likelihood: low/low</p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </main>
+
+
+
+
+
+    <script src="/js/all.body.min.js"></script>
+
+  </body>
+</html>

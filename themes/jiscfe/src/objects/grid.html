@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html class="o-layout c-structure no-js" lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicons/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon-180x180.png">
+    <meta name="apple-mobile-web-app-title" content="Jisc">
+    <link rel="manifest" href="/img/favicons/manifest.json">
+    <link rel="icon" type="image/png" href="/img/favicons/android-chrome-192x192.png" sizes="192x192">
+    <meta name="application-name" content="Jisc">
+    <meta name="msapplication-TileColor" content="#e85e13">
+    <meta name="msapplication-TileImage" content="/img/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#e85e13">
+    <meta name="theme-color" content="#e85e13">
+    <title>Grid (sitewide)</title>
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i" rel="stylesheet">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <script src="/js/all.head.min.js"></script>
+    <style type="text/css">
+      ._qa1 {
+        background-color: #ccc;
+      }
+      ._qa2 {
+        background-color: #aaa;
+      }
+      ._qa-red {
+        background-color: pink;
+      }
+      ._qa-blue {
+        background-color: cyan;
+      }
+      ._qa-green {
+        background-color: #cfc;
+      }
+      ._qa-no {
+        background-color: red;
+      }
+
+      ._example-asymmetric-slice {
+        background: linear-gradient(to right, #fff 0%, #fff 50%, transparent 50%,transparent 100%);
+      }
+
+      ._example-asymmetric-slice__inner {
+        padding-right: .9rem;
+        background-color: #fff;
+      }
+
+      @media (min-width: 61.875em) {
+
+        ._example-asymmetric-slice__inner {
+          padding-right: 1.8em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+
+
+
+
+    <main class="c-structure__main-content" id="main-content" role="main">
+
+
+
+      <div class="c-structure__major-content">
+
+
+
+        <div class="o-layout__container">
+
+          <h1>Grid (sitewide)</h1>
+          <p>Note: <code>br</code> elements are there as an artificial spacer for this example page only; do not use them in production code.</p>
+          <br>
+
+          <h2>Standard grid</h2>
+          <br>
+          <h3>Simple linear to columnar responsive grid layout switching</h3>
+          <br>
+          <h4>XS up (&ge;465px)</h4>
+          <div class="o-grid">
+            <div class="o-grid__item u-4/12@XS">
+              <div class="_qa1">
+                .u-4/12@XS
+              </div>
+            </div>
+            <div class="o-grid__item u-4/12@XS">
+              <div class="_qa1">
+                .u-4/12@XS
+              </div>
+            </div>
+            <div class="o-grid__item u-4/12@XS">
+              <div class="_qa1">
+                .u-4/12@XS
+              </div>
+            </div>
+          </div>
+          <br>
+          <h4>SM up (&ge;565px)</h4>
+          <div class="o-grid">
+            <div class="o-grid__item u-3/12@SM">
+              <div class="_qa1">
+                .u-3/12@SM
+              </div>
+            </div>
+            <div class="o-grid__item u-3/12@SM">
+              <div class="_qa1">
+                .u-3/12@SM
+              </div>
+            </div>
+            <div class="o-grid__item u-3/12@SM">
+              <div class="_qa1">
+                .u-3/12@SM
+              </div>
+            </div>
+            <div class="o-grid__item u-3/12@SM">
+              <div class="_qa1">
+                .u-3/12@SM
+              </div>
+            </div>
+          </div>
+          <br>
+          <h4>MS up (&ge;630px)</h4>
+          <div class="o-grid">
+            <div class="o-grid__item u-2/12@MS">
+              <div class="_qa1">
+                .u-2/12@MS
+              </div>
+            </div>
+            <div class="o-grid__item u-2/12@MS">
+              <div class="_qa1">
+                .u-2/12@MS
+              </div>
+            </div>
+            <div class="o-grid__item u-2/12@MS">
+              <div class="_qa1">
+                .u-2/12@MS
+              </div>
+            </div>
+            <div class="o-grid__item u-2/12@MS">
+              <div class="_qa1">
+                .u-2/12@MS
+              </div>
+            </div>
+            <div class="o-grid__item u-2/12@MS">
+              <div class="_qa1">
+                .u-2/12@MS
+              </div>
+            </div>
+            <div class="o-grid__item u-2/12@MS">
+              <div class="_qa1">
+                .u-2/12@MS
+              </div>
+            </div>
+          </div>
+          <br>
+          <h4>MD up (&ge;757px)</h4>
+          <div class="o-grid">
+            <div class="o-grid__item u-2/12@MD">
+              <div class="_qa1">
+                .u-2/12@MD
+              </div>
+            </div>
+            <div class="o-grid__item u-2/12@MD">
+              <div class="_qa1">
+                .u-2/12@MD
+              </div>
+            </div>
+            <div class="o-grid__item u-2/12@MD">
+              <div class="_qa1">
+                .u-2/12@MD
+              </div>
+            </div>
+            <div class="o-grid__item u-2/12@MD">
+              <div class="_qa1">
+                .u-2/12@MD
+              </div>
+            </div>
+            <div class="o-grid__item u-2/12@MD">
+              <div class="_qa1">
+                .u-2/12@MD
+              </div>
+            </div>
+            <div class="o-grid__item u-2/12@MD">
+              <div class="_qa1">
+                .u-2/12@MD
+              </div>
+            </div>
+          </div>
+          <div class="o-grid">
+            <div class="o-grid__item u-1/12@MD">
+              <div class="_qa1">
+                .u-1/12@MD
+              </div>
+            </div>
+            <div class="o-grid__item u-10/12@MD">
+              <div class="_qa1">
+                .u-10/12@MD
+              </div>
+            </div>
+          </div>
+          <br>
+          <h4>ML up (&ge;850px)</h4>
+          <div class="o-grid">
+            <div class="o-grid__item u-9/12@ML">
+              <div class="_qa1">
+                .u-9/12@ML
+              </div>
+            </div>
+             <div class="o-grid__item u-3/12@ML">
+              <div class="_qa1">
+                .u-3/12@ML
+              </div>
+            </div>
+          </div>
+          <br>
+          <h4>LG up (&ge;990px)</h4>
+          <div class="o-grid">
+            <div class="o-grid__item u-1/12@LG">
+              <div class="_qa1">
+                .u-1/12@LG
+              </div>
+            </div>
+            <div class="o-grid__item u-1/12@LG">
+              <div class="_qa1">
+                .u-1/12@LG
+              </div>
+            </div>
+            <div class="o-grid__item u-1/12@LG">
+              <div class="_qa1">
+                .u-1/12@LG
+              </div>
+            </div>
+            <div class="o-grid__item u-1/12@LG">
+              <div class="_qa1">
+                .u-1/12@LG
+              </div>
+            </div>
+            <div class="o-grid__item u-1/12@LG">
+              <div class="_qa1">
+                .u-1/12@LG
+              </div>
+            </div>
+            <div class="o-grid__item u-1/12@LG">
+              <div class="_qa1">
+                .u-1/12@LG
+              </div>
+            </div>
+            <div class="o-grid__item u-1/12@LG">
+              <div class="_qa1">
+                .u-1/12@LG
+              </div>
+            </div>
+            <div class="o-grid__item u-1/12@LG">
+              <div class="_qa1">
+                .u-1/12@LG
+              </div>
+            </div>
+            <div class="o-grid__item u-1/12@LG">
+              <div class="_qa1">
+                .u-1/12@LG
+              </div>
+            </div>
+            <div class="o-grid__item u-1/12@LG">
+              <div class="_qa1">
+                .u-1/12@LG
+              </div>
+            </div>
+            <div class="o-grid__item u-1/12@LG">
+              <div class="_qa1">
+                .u-1/12@LG
+              </div>
+            </div>
+            <div class="o-grid__item u-1/12@LG">
+              <div class="_qa1">
+                .u-1/12@LG
+              </div>
+            </div>
+          </div>
+          <br>
+          <h4>Layouts we tend to use</h4>
+          <h5>Generic page</h5>
+          <div class="o-grid">
+            <div class="o-grid__item u-9/12@MD">
+              <div class="_qa1">
+                .u-9/12@MD
+              </div>
+            </div>
+            <div class="o-grid__item u-3/12@MD">
+              <div class="_qa1">
+                .u-3/12@MD
+              </div>
+            </div>
+          </div>
+          <br>
+          <h5>Boombox</h5>
+          <div class="o-grid">
+            <div class="o-grid__item u-10/12@MD u-push-1/12@MD">
+              <div class="_qa1">
+                .u-10/12@MD.u-push-1/12@MD
+              </div>
+            </div>
+          </div>
+          <br>
+          <h3>More complex linear, to semi-columnar, to columnar responsive grid layout switching</h3>
+          <br>
+          <h4>1 by 1 (2-up) region layout</h4>
+          <div class="o-grid">
+            <div class="o-grid__item u-6/12@SM">
+              <div class="_qa1">
+                .u-6/12@SM
+              </div>
+            </div>
+            <div class="o-grid__item u-6/12@SM">
+              <div class="_qa1">
+                .u-6/12@SM
+              </div>
+            </div>
+          </div>
+          <br>
+          <h4>1 over 2 (3-up) region layout</h4>
+          <div class="o-grid">
+            <div class="o-grid__item u-12/12@SM u-4/12@MD">
+              <div class="_qa1">
+                .u-12/12@SM.u-4/12@MD
+              </div>
+            </div>
+            <div class="o-grid__item u-6/12@SM u-4/12@MD">
+              <div class="_qa1">
+                .u-6/12@SM.u-4/12@MD
+              </div>
+            </div>
+            <div class="o-grid__item u-6/12@SM u-4/12@MD">
+              <div class="_qa1">
+                .u-6/12@SM.u-4/12@MD
+              </div>
+            </div>
+          </div>
+          <br>
+          <h4>2 over 2 (4-up) region layout, Main site footer layout</h4>
+          <div class="o-grid">
+            <div class="o-grid__item u-6/12@SM u-3/12@MD">
+              <div class="_qa1">
+                .u-6/12@SM.u-3/12@MD
+              </div>
+            </div>
+            <div class="o-grid__item u-6/12@SM u-3/12@MD">
+              <div class="_qa1">
+                .u-6/12@SM.u-3/12@MD
+              </div>
+            </div>
+            <div class="o-grid__item u-6/12@SM u-3/12@MD">
+              <div class="_qa1">
+                .u-6/12@SM.u-3/12@MD
+              </div>
+            </div>
+            <div class="o-grid__item u-6/12@SM u-3/12@MD">
+              <div class="_qa1">
+                .u-6/12@SM.u-3/12@MD
+              </div>
+            </div>
+          </div>
+          <br>
+
+          <h2>Nested grid</h2>
+          <br>
+          <div class="o-grid">
+            <div class="o-grid__item u-9/12@MD">
+              <div class="_qa1">
+                .u-9/12@MD
+                <div class="o-grid o-grid--span-9@MD">
+                  <div class="o-grid__item u-3/9">
+                    <div class="_qa2">
+                      .u-9/12@MD &gt; .o-grid--span-9@MD &gt; .u-3/9
+                    </div>
+                  </div>
+                  <div class="o-grid__item u-4/9">
+                    <div class="_qa2">
+                      .u-9/12@MD &gt; .o-grid--span-9@MD &gt; .u-4/9
+                    </div>
+                  </div>
+                  <div class="o-grid__item u-2/9">
+                    <div class="_qa2">
+                      .u-9/12@MD &gt; .o-grid--span-9@MD &gt; .u-2/9
+                    </div>
+                  </div>
+                </div>
+                <div class="o-grid o-grid--span-9@LG">
+                  <div class="o-grid__item u-7/9">
+                    <div class="_qa2">
+                      .u-9/12@MD &gt; .o-grid--span-9@LG &gt; .u-7/9
+                    </div>
+                  </div>
+                  <div class="o-grid__item u-2/9">
+                    <div class="_qa2">
+                      .u-9/12@MD &gt; .o-grid--span-9@LG &gt; .u-2/9
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="o-grid__item u-3/12@MD">
+              <div class="_qa1">
+                .u-3/12@MD
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="o-grid">
+            <div class="o-grid__item u-9/12@LG">
+              <div class="_qa1">
+                .u-9/12@LG
+                <div class="o-grid o-grid--span-9@MD">
+                </div>
+                <div class="o-grid o-grid--span-9@LG">
+                  <div class="o-grid__item u-3/9">
+                    <div class="_qa2">
+                      .u-9/12@LG &gt; .o-grid--span-9@LG &gt; .u-3/9
+                    </div>
+                  </div>
+                  <div class="o-grid__item u-4/9">
+                    <div class="_qa2">
+                      .u-9/12@LG &gt; .o-grid--span-9@LG &gt; .u-4/9
+                    </div>
+                  </div>
+                  <div class="o-grid__item u-2/9">
+                    <div class="_qa2">
+                      .u-9/12@LG &gt; .o-grid--span-9@LG &gt; .u-2/9
+                    </div>
+                  </div>
+                  <div class="o-grid__item u-7/9">
+                    <div class="_qa2">
+                      .u-9/12@LG &gt; .o-grid--span-9@LG &gt; .u-7/9
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="o-grid__item u-3/12@LG">
+              <div class="_qa1">
+                .u-3/12@LG
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="_example-asymmetric-slice">
+          <div class="o-layout__container">
+            <div class="_example-asymmetric-slice__inner">
+
+              <h2>Asymmetric grid</h2>
+              <br>
+              <h3>Simple linear to columnar responsive grid layout switching</h3>
+              <br>
+              <h4>XS up (&ge;465px): .o-grid.o-grid--asymmetric@XS</h4>
+              <div class="o-grid o-grid--asymmetric@XS">
+                <div class="o-grid__item u-3/12@XS">
+                  <div class="_qa1">
+                    .o-grid.o-grid--asymmetric@XS .u-3/12@XS
+                  </div>
+                </div>
+                <div class="o-grid__item u-3/12@XS">
+                  <div class="_qa1">
+                    .o-grid.o-grid--asymmetric@XS .u-3/12@XS
+                  </div>
+                </div>
+                <div class="o-grid__item u-3/12@XS">
+                  <div class="_qa1">
+                    .o-grid.o-grid--asymmetric@XS .u-3/12@XS
+                  </div>
+                </div>
+                <div class="o-grid__item o-grid__item--last u-3/12@XS">
+                  <div class="_qa1">
+                    .o-grid.o-grid--asymmetric@XS .u-3/12@XS.o-grid__item--last
+                  </div>
+                </div>
+              </div>
+              <br>
+              <h4>SM up (&ge;565px): .o-grid.o-grid--asymmetric@SM</h4>
+              <div class="o-grid o-grid--asymmetric@SM">
+                <div class="o-grid__item u-2/12@SM">
+                  <div class="_qa1">
+                    .u-2/12@SM
+                  </div>
+                </div>
+                <div class="o-grid__item u-2/12@SM">
+                  <div class="_qa1">
+                    .u-2/12@SM
+                  </div>
+                </div>
+                <div class="o-grid__item u-2/12@SM">
+                  <div class="_qa1">
+                    .u-2/12@SM
+                  </div>
+                </div>
+                <div class="o-grid__item u-2/12@SM">
+                  <div class="_qa1">
+                    .u-2/12@SM
+                  </div>
+                </div>
+                <div class="o-grid__item u-2/12@SM">
+                  <div class="_qa1">
+                    .u-2/12@SM
+                  </div>
+                </div>
+                <div class="o-grid__item o-grid__item--last u-2/12@SM">
+                  <div class="_qa1">
+                    .u-2/12@SM.o-grid__item--last
+                  </div>
+                </div>
+              </div>
+              <br>
+              <h4>MS up (&ge;630px): .o-grid.o-grid--asymmetric@MS</h4>
+              <div class="o-grid o-grid--asymmetric@MS">
+                <div class="o-grid__item u-8/12@MS">
+                  <div class="_qa1">
+                    .u-8/12@MS
+                  </div>
+                </div>
+                <div class="o-grid__item o-grid__item--last u-4/12@MS">
+                  <div class="_qa1">
+                    .u-4/12@MS.o-grid__item--last
+                  </div>
+                </div>
+              </div>
+              <br>
+              <h4>MD up (&ge;757px): .o-grid.o-grid--asymmetric@MD</h4>
+              <div class="o-grid o-grid--asymmetric@MD">
+                <div class="o-grid__item u-2/12@MD">
+                  <div class="_qa1">
+                    .u-2/12@MD
+                  </div>
+                </div>
+                <div class="o-grid__item u-2/12@MD">
+                  <div class="_qa1">
+                    .u-2/12@MD
+                  </div>
+                </div>
+                <div class="o-grid__item u-2/12@MD">
+                  <div class="_qa1">
+                    .u-2/12@MD
+                  </div>
+                </div>
+                <div class="o-grid__item u-2/12@MD">
+                  <div class="_qa1">
+                    .u-2/12@MD
+                  </div>
+                </div>
+                <div class="o-grid__item u-2/12@MD">
+                  <div class="_qa1">
+                    .u-2/12@MD
+                  </div>
+                </div>
+                <div class="o-grid__item o-grid__item--last u-2/12@MD">
+                  <div class="_qa1">
+                    .u-2/12@MD.o-grid__item--last
+                  </div>
+                </div>
+              </div>
+              <br>
+              <h4>ML up (&ge;850px): .o-grid.o-grid--asymmetric@ML</h4>
+              <div class="o-grid o-grid--asymmetric@ML">
+                <div class="o-grid__item u-6/12@ML">
+                  <div class="_qa1">
+                    .u-6/12@ML
+                  </div>
+                </div>
+                <div class="o-grid__item o-grid__item--last u-6/12@ML">
+                  <div class="_qa1">
+                    .u-6/12@ML.o-grid__item--last
+                  </div>
+                </div>
+              </div>
+              <br>
+              <h4>LG up (&ge;850px): .o-grid.o-grid--asymmetric@LG</h4>
+              <div class="o-grid o-grid--asymmetric@LG">
+                <div class="o-grid__item u-1/12@LG">
+                  <div class="_qa1">
+                    .u-1/12@LG
+                  </div>
+                </div>
+                <div class="o-grid__item u-1/12@LG">
+                  <div class="_qa1">
+                    .u-1/12@LG
+                  </div>
+                </div>
+                <div class="o-grid__item u-1/12@LG">
+                  <div class="_qa1">
+                    .u-1/12@LG
+                  </div>
+                </div>
+                <div class="o-grid__item u-1/12@LG">
+                  <div class="_qa1">
+                    .u-1/12@LG
+                  </div>
+                </div>
+                <div class="o-grid__item u-1/12@LG">
+                  <div class="_qa1">
+                    .u-1/12@LG
+                  </div>
+                </div>
+                <div class="o-grid__item u-1/12@LG">
+                  <div class="_qa1">
+                    .u-1/12@LG
+                  </div>
+                </div>
+                <div class="o-grid__item u-1/12@LG">
+                  <div class="_qa1">
+                    .u-1/12@LG
+                  </div>
+                </div>
+                <div class="o-grid__item u-1/12@LG">
+                  <div class="_qa1">
+                    .u-1/12@LG
+                  </div>
+                </div>
+                <div class="o-grid__item u-1/12@LG">
+                  <div class="_qa1">
+                    .u-1/12@LG
+                  </div>
+                </div>
+                <div class="o-grid__item o-grid__item--last u-3/12@LG">
+                  <div class="_qa1">
+                    .u-3/12@LG.o-grid__item--last
+                  </div>
+                </div>
+              </div>
+              <br>
+              <h4>Layouts we tend to use</h4>
+              <h5>Page header: .o-grid.o-grid--asymmetric@MD</h5>
+              <div class="o-grid o-grid--asymmetric@MD">
+                <div class="o-grid__item u-9/12@MD">
+                  <div class="_qa1">
+                    .u-9/12@MD
+                  </div>
+                </div>
+                <div class="o-grid__item o-grid__item--last u-3/12@MD">
+                  <div class="_qa1">
+                    .u-3/12@MD.o-grid__item--last
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <h3>More complex linear, to semi-columnar, to columnar responsive grid layout switching</h3>
+              <p>These can not be used in the asymmetric grid.</p>
+              <br>
+
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+
+    </main>
+
+
+
+
+
+    <script src="/js/all.body.min.js"></script>
+
+  </body>
+</html>

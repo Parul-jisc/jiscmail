@@ -1,0 +1,23 @@
+// ## Breakpoints
+// ==========================================================================
+
+//
+// Breakpoints use the browser default of 16px to calculate their size, due to 
+// how browsers render. This only affects these variables and not class REM 
+// values, which are based off 62.5% of the font-size of the HTML element.
+//
+// "PX, EM or REM Media Queries?": 
+// http://zellwk.com/blog/media-query-units/
+//
+// We attempt to only use min-width media queries, hence all breakpoints are 
+// defined as the minimum value that the layout breaks at.
+//
+
+$breakpoint-XS:  29.0625em; // = 465px
+$breakpoint-SM:  35.3125em; // = 565px
+$breakpoint-MS:  39.375em;  // = 630px
+$breakpoint-MD:  47.3125em; // = 757px
+$breakpoint-ML:  53.125em;  // = 850px
+$breakpoint-LG:  61.875em;  // = 990px
+$breakpoint-XL:  80em;      // = 1280px
+$breakpoint-XXL: 87.5em;    // = 1400px

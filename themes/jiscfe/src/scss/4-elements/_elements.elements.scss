@@ -1,0 +1,112 @@
+/* ## Elements: Base styles
+   ========================================================================== */
+
+/**
+ * Opinionated, good defaults: here we set styles to how we want.
+ */
+
+
+/* ### Generic elements
+   -------------------------------------------------------------------------- */
+
+/**
+ * "inuitcss/elements/_elements.page.scss":
+ * https://github.com/inuitcss/inuitcss/blob/develop/elements/_elements.page.scss
+ * 
+ * 1. Force scrollbars to always be visible to prevent awkward 'jumps' when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ *
+ * @zzcgulm
+ *
+ * 2. Set colour explicity otherwise it will need to be set in each block. This 
+ *    is iffy as the colour difference between this and black is so subtle it 
+ *    is difficult to test without a visual regression tool.
+ * 3. Also set a background colour when setting colour for accessibility 
+ *    requirements.
+ */
+
+html {
+  overflow-y: scroll; /* [1] */
+  color: $colour-Grey_MineShaft-light; /* [2] */
+  background-color: $colour-White; /* [4] */
+}
+
+/**
+ * "Base styles: opinionated defaults":
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+ *
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+/**
+ * "Base styles: opinionated defaults":
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+ *
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+
+/* ### Typography
+   -------------------------------------------------------------------------- */
+
+/**
+ * "App reset by Ben Frain @benfrain / benfrain.com":
+ * https://github.com/benfrain/app-reset/blob/master/app-reset.css
+ *
+ * No bold for strong or b tags by default.
+ */
+
+strong,
+b {
+  font-weight: 300;
+}
+
+/**
+ * "App reset by Ben Frain @benfrain / benfrain.com":
+ * https://github.com/benfrain/app-reset/blob/master/app-reset.css
+ *
+ * Prevent these elements having italics by default.
+ */
+
+em,
+i {
+  font-style: normal;
+}
+
+
+/* ### Forms
+   -------------------------------------------------------------------------- */
+
+/**
+ * "Base styles: opinionated defaults":
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+ *
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}

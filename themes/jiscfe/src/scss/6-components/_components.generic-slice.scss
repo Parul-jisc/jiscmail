@@ -1,0 +1,227 @@
+/* ## Generic slice
+ * ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ *
+ * 1. Used as a container for any non-editable content, ie that controlled by
+ *    templates and not the CMS.
+ */
+
+.c-generic-slice { /* [1] */
+  @include u-Clearfix;
+
+  &--default {
+    color: $colour-Grey_MineShaft-light;
+    background-color: $colour-White;
+  }
+
+  &--first {
+    padding-top: $whitespace-VR-landmark;
+  }
+
+  &--last {
+    padding-bottom: $whitespace-VR-double-landmark;
+  }
+}
+
+
+/* ### Content sectioning
+   -------------------------------------------------------------------------- */
+
+/* #### Headings
+   .......................................................................... */
+
+.c-generic-slice__heading-xl {
+  @include typo-Tuba;
+  margin-top: $whitespace-VR-landmark;
+}
+
+.c-generic-slice__heading-l {
+  @include typo-Euphonium;
+  margin-top: $whitespace-VR-landmark;
+}
+
+.c-generic-slice__heading-m {
+  @include typo-Baritone;
+  margin-top: $whitespace-VR-landmark;
+}
+
+.c-generic-slice__heading-s {
+  @include typo-Tenor
+  margin-top: $whitespace-VR-landmark;
+}
+
+.c-generic-slice__heading-xs {
+  @include typo-Horn;
+  margin-top: $whitespace-VR-separate;
+}
+
+.c-generic-slice__heading-xxs {
+  @include typo-Flugelhorn;
+  margin-top: $whitespace-VR-separate;
+}
+
+
+/* ### Text content
+   -------------------------------------------------------------------------- */
+
+/* #### Lead paragraph
+   .......................................................................... */
+
+.c-generic-slice__lead-paragraph {
+  @include typo-LeadCopy;
+  margin-top: $whitespace-VR-separate;
+}
+
+/* #### Body copy
+   .......................................................................... */
+
+.c-generic-slice__body-copy {
+  @include typo-BodyCopy;
+  margin-top: $whitespace-VR-separate;
+}
+
+/* #### Supporting copy
+   .......................................................................... */
+
+.c-generic-slice__supporting-copy {
+  @include typo-Trumpet;
+  margin-top: $whitespace-VR-associate;
+  color: $colour-Grey_Grey-dark;
+}
+
+/* #### Description lists
+   .......................................................................... */
+
+.c-generic-slice__description-list {
+}
+
+.c-generic-slice__description-term {
+  @include typo-BodyCopy;
+  margin-top: $whitespace-VR-separate;
+}
+
+.c-generic-slice__description-details {
+  @include typo-BodyCopy;
+}
+
+/* #### Ordered and unordered Lists
+   .......................................................................... */
+
+.c-generic-slice__list {
+  padding-left: $whitespace-Gutter-quad;
+  margin-top: $whitespace-VR-separate;
+  list-style: none;
+
+  &--ordered {
+  }
+
+  &--unordered {
+  }
+
+  .c-generic-slice__list & {
+    margin-top: 0;
+  }
+}
+
+.c-generic-slice__list-item {
+  @include typo-BodyCopy;
+
+  .c-generic-slice__list--ordered & {
+    margin-top: $whitespace-VR-associate;
+    list-style-type: decimal;
+    list-style-position: outside;
+  }
+
+  .c-generic-slice__list--ordered .c-generic-slice__list--ordered &,
+  .c-generic-slice__list--unordered .c-generic-slice__list--ordered & {
+    margin-top: $whitespace-VR-associate;
+    list-style-type: lower-latin;
+    list-style-position: outside;
+  }
+
+  .c-generic-slice__list--ordered .c-generic-slice__list--ordered .c-generic-slice__list--ordered &,
+  .c-generic-slice__list--unordered .c-generic-slice__list--ordered .c-generic-slice__list--ordered &,
+  .c-generic-slice__list--ordered .c-generic-slice__list--unordered .c-generic-slice__list--ordered &,
+  .c-generic-slice__list--unordered .c-generic-slice__list--unordered .c-generic-slice__list--ordered & {
+    margin-top: $whitespace-VR-associate;
+    list-style-type: lower-roman;
+    list-style-position: outside;
+  }
+
+  .c-generic-slice__list--unordered & {
+    margin-top: $whitespace-VR-associate;
+    list-style-type: disc;
+    list-style-position: outside;
+  }
+
+  .c-generic-slice__list--ordered .c-generic-slice__list--unordered &,
+  .c-generic-slice__list--unordered .c-generic-slice__list--unordered & {
+    margin-top: $whitespace-VR-associate;
+    list-style-type: circle;
+    list-style-position: outside;
+  }
+
+  .c-generic-slice__list--ordered .c-generic-slice__list--ordered .c-generic-slice__list--unordered &,
+  .c-generic-slice__list--unordered .c-generic-slice__list--ordered .c-generic-slice__list--unordered &,
+  .c-generic-slice__list--ordered .c-generic-slice__list--unordered .c-generic-slice__list--unordered &,
+  .c-generic-slice__list--unordered .c-generic-slice__list--unordered .c-generic-slice__list--unordered & {
+    margin-top: $whitespace-VR-associate;
+    list-style-type: square;
+    list-style-position: outside;
+  }
+}
+
+
+/* ### Inline text semantics
+   -------------------------------------------------------------------------- */
+
+.c-generic-slice__abbr[title] {
+  @include u-Abbr();
+}
+
+.c-generic-slice__strong {
+
+  .c-generic-slice__body-copy &,
+  .c-generic-slice__description-list &,
+  .c-generic-slice__heading-xl &,
+  .c-generic-slice__heading-m &,
+  .c-generic-slice__heading-xs &,
+  .c-generic-slice__list-item,
+  .c-generic-slice__lead-paragraph & {
+    font-weight: 400;
+  }
+
+  .c-generic-slice__heading-l &,
+  .c-generic-slice__heading-s &,
+  .c-generic-slice__heading-xxs & {
+    font-weight: 500;
+  }
+}
+
+/* #### Links
+   .......................................................................... */
+
+.c-generic-slice__link {
+
+  &--default {
+
+    .c-generic-slice--light-bg & {
+      @include link-LightBg(
+        $visited-style: true,
+        $has-surrounding-text: true 
+      );
+    }
+  }
+
+  &--no-visited-style {
+
+  .c-generic-slice--light-bg & {
+      @include link-LightBg(
+        $visited-style: false,
+        $has-surrounding-text: true 
+      );
+    }
+  }
+}

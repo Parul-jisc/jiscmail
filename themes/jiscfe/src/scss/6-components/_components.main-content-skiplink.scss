@@ -1,0 +1,49 @@
+/* ## Main content skiplink
+   ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ *
+ * Skip to main content link.
+ *
+ * 1. Magin number alert: Width of .c-main-skiplink needs to be larger than the 
+ *    computed width of the copy within it. A value of 27rem happens to give a
+ *    visible 2.7rem either side as a faux gutter.
+ * 2. Only used to calculate the width of the copy.
+ * 3. Push down by the outline width, else it is vertically lopsided.
+ */
+
+.c-main-content-skiplink  {
+  @include link-LightBg(
+    $visited-style: false,
+    $has-surrounding-text: false 
+  );
+  @include u-Visuallyhidden;
+
+  &:focus {
+    @include u-Visuallyhidden_Focusable;
+    z-index: $zindex-MainContentSkiplink;
+    position: absolute;
+    right: 0;
+    top: $whitespace-Border_Width-thick; /* [3] */
+    left: 0;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include breakpoint($breakpoint-XS) {
+      width: 21rem; /* [1] */
+    }
+  }
+}
+
+.c-main-content-skiplink__copy {
+  display: block;
+  width: 100%; /* [2] */
+  padding: $whitespace-VR-associate $whitespace-Gutter-single; 
+  font-family: $font-Roboto;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  text-align: center;
+}

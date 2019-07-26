@@ -1,0 +1,10 @@
+<div class="o-layout__container">
+    <div class="o-grid">
+        <div class="o-grid__item u-4/12@MD">
+            {% if label %}
+                <h1>{{ label }}</h1>
+            {% endif %}
+            {% block content %}
+                {{ content }}
+            {% endblock %}
+        </div>

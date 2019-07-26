@@ -1,0 +1,167 @@
+/* ## Reset
+   ========================================================================== */
+
+/**
+ * An opinionated set of resets.
+ */
+
+
+/* ### Generic elements
+   -------------------------------------------------------------------------- */
+
+/**
+ * "Base styles: opinionated defaults":
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+ *
+ * Thanks to L. David Baron for this:
+ * https://twitter.com/davidbaron/status/794138427952222210
+ */
+
+base,
+basefont,
+datalist,
+head,
+meta,
+script,
+style,
+title,
+noembed,
+param,
+template {
+    display: none;
+}
+
+
+/* ### Headings and typography
+   -------------------------------------------------------------------------- */
+
+/**
+ * "App reset by Ben Frain @benfrain / benfrain.com":
+ * https://github.com/benfrain/app-reset/blob/master/app-reset.css
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre {
+  /* We will be adding our own margin to these elements as needed. */
+  margin: 0;
+  /* You'll want to set font-size as needed. */
+  font-size: 1rem;
+  /* No bold for h tags unless you want it */
+  font-weight: 400;
+}
+
+/**
+ * @zzcgulm
+ *
+ * Reset figures.
+ */
+
+figure {
+  /* We will be adding our own margin to these elements as needed. */
+  margin: 0;
+}
+
+
+/* ### Links
+   -------------------------------------------------------------------------- */
+
+/**
+ * "App reset by Ben Frain @benfrain / benfrain.com":
+ * https://github.com/benfrain/app-reset/blob/master/app-reset.css
+ */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ### Forms
+   -------------------------------------------------------------------------- */
+
+/**
+ * https://github.com/inuitcss/inuitcss/blob/develop/generic/_generic.reset.scss
+ *
+ * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
+ *    on fieldsets.
+ * 
+ * "Base styles: opinionated defaults":
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+ *
+ * 2. Remove default fieldset styles.
+ *
+ */
+
+fieldset {
+  min-width: 0; /* [1] */
+  padding: 0; /* [2] */
+  margin: 0; /* [2] */
+  border: 0; /* [1, 2] */
+}
+
+
+/* ### Lists
+   -------------------------------------------------------------------------- */
+
+/**
+ * @zzcgulm
+ *
+ * Reset lists.
+ */
+
+dl {
+  /* We will be adding our own margin to these elements as needed. */
+  margin: 0;
+}
+
+  dd {
+    /* We will be adding our own margin to these elements as needed. */
+    margin-left: 0;
+  }
+
+ol,
+ul {
+  /* Remove padding-left on list elements. */
+  padding: 0;
+  /* We will be adding our own margin to these elements as needed. */
+  margin: 0;
+  /* Remove default bullets on list elements. */
+  list-style: none;
+}
+
+
+/* ### Quotes
+   -------------------------------------------------------------------------- */
+
+/**
+ * @zzcgulm
+ *
+ * Reset blockquotes.
+ */
+
+blockquote {
+  /* We will be adding our own margin to these elements as needed. */
+  margin: 0;
+}
+
+
+/* ### Tables
+   -------------------------------------------------------------------------- */
+
+/**
+ * "inuitcss/generic/_generic.reset.scss":
+ * https://github.com/inuitcss/inuitcss/blob/develop/generic/_generic.reset.scss
+ * 
+ * Remove default table spacing.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

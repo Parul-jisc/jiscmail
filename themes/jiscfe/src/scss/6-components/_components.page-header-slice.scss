@@ -1,0 +1,196 @@
+/* ## Page header
+   ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ *
+ * Notes:
+ * 1. Match whitespace values here for consistency. Use inline spacing units 
+ *    instead of gutter units to take into account the inline spaces that are 
+ *    also present (unlike in gutters between grid items).
+ *
+ * CMS implementation requirements:
+ * a. Children of this class are content editable. Accepted elements are:
+ *    Plain text
+ *    'a'
+ *    'abbr'
+ *    'p'
+ *    'strong'
+ */
+
+.c-page-header-slice {
+  @include u-Clearfix;
+  color: $colour-Grey_MineShaft-light;
+  background-color: $colour-White;
+}
+
+/* header */.c-page-header-slice__header {
+  @include o-AsymmetricBlockParentBackground($colour-Grey_Alabaster);
+}
+
+.c-page-header-slice__header-inner {
+  @include u-Clearfix;
+  padding-right: $whitespace-Gutter-single;
+  padding-bottom: $whitespace-VR-landmark;
+  background-color: $colour-Grey_Alabaster;
+
+  @include breakpoint($breakpoint-MD) {
+    padding-right: $whitespace-Gutter-double; 
+    padding-bottom: $whitespace-VR-double-landmark;
+  }
+}
+
+
+/* ### Basic elements
+   -------------------------------------------------------------------------- */
+
+/* h1 */.c-page-header-slice__title {
+  @include typo-Tuba;
+  margin-top: $whitespace-VR-landmark; 
+
+  @include breakpoint($breakpoint-MD) {
+    margin-top: $whitespace-VR-double-landmark; 
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+/* p */.c-page-header-slice__description {
+  @include typo-BodyCopy;
+  margin-top: $whitespace-VR-separate;
+
+  a {
+    @include link-LightBg(
+      $visited-style: true,
+      $has-surrounding-text: true
+    );
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+
+/* ### Product information
+   -------------------------------------------------------------------------- */
+
+/* div */ .c-page-header-slice__product-info {
+  margin-top: $whitespace-VR-separate;
+
+  @include breakpoint($breakpoint-SM) {
+    margin-top: 0;
+  }
+}
+
+/* dt */.c-page-header-slice__product-info-heading {
+  @include typo-Trumpet;
+  min-width: 4em;
+  color: $colour-Grey_MineShaft-light;
+
+  @include breakpoint($breakpoint-SM) {
+    display: inline-block;
+    min-width: auto;
+  }
+
+  &--visuallyhidden {
+    @include u-Visuallyhidden;
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+}
+
+/* dd */.c-page-header-slice__product-date {
+  @include typo-Trumpet;
+  min-width: auto;
+  margin-left: $whitespace-InlineSpace;
+  color: $colour-Grey_Grey-dark;
+  
+  @include breakpoint($breakpoint-SM) { 
+    display: inline-block;
+    margin-right: $whitespace-EmSpace; /* [1] */
+  }
+}
+
+/* dd */.c-page-header-slice__product-description-summary { /* [a] */
+  margin-top: $whitespace-VR-separate;
+
+  a {
+    @include link-LightBg(
+      $visited-style: true,
+      $has-surrounding-text: true
+    );
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  p {
+    @include typo-BodyCopy;
+    margin-top: $whitespace-VR-associate;
+  }
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+/* dd */.c-page-header-slice__product-publisher-title {
+  @include typo-Trumpet;
+  margin-top: $whitespace-VR-separate;
+  color: $colour-Grey_Grey-dark;
+}
+
+/* div */.c-page-header-slice__product-info-group { 
+  display: flex;
+  justify-content: flex-start;
+  margin-top: $whitespace-VR-associate; 
+
+  @include breakpoint($breakpoint-SM) {
+    display: inline-block; 
+    margin-top: $whitespace-VR-separate;
+  }
+}
+
+
+/* ### Wishlist
+   -------------------------------------------------------------------------- */
+
+/* p */.c-page-header-slice__wishlist-title {
+  @include u-Visuallyhidden;
+}
+
+.c-page-header-slice__wishlist-options {
+  margin-top: $whitespace-VR-separate;
+}
+
+/* li */.c-page-header-slice__wishlist-item {
+  @include typo-Trumpet;
+  display: inline;
+  margin-left: $whitespace-EmSpace; /* [1] */
+  color: $colour-Grey_Grey-dark;
+
+  &--first {
+    margin-left: 0;
+  }
+}
+
+/* a */.c-page-header-slice__wishlist-cta-link {
+   @include link-LightBg-has-icon(
+     $visited-style: false,
+     $has-surrounding-text: true 
+   );
+}

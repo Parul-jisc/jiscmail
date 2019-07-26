@@ -1,0 +1,25 @@
+/* ## Washing line
+ * ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ */
+
+/* div */.c-washing-line {
+  box-sizing: border-box;
+  height: $whitespace-Border_Width-thick;
+  padding-top: $whitespace-Border_Width-thick;
+  background-color: $colour-Black;
+
+  &--page-header {
+    @include o-AsymmetricBlockParentBackground($colour-Black);
+    margin-top: $whitespace-VR-separate;
+  }
+}
+
+.c-washing-line__inner {
+  height: $whitespace-Border_Width-thick;
+  padding-bottom: 0;
+  margin-top: -$whitespace-Border_Width-thick;
+  background-color: $colour-Black;
+}

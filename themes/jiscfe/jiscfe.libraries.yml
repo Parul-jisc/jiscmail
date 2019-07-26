@@ -1,0 +1,18 @@
+jisc-specific:
+  version: 1.x
+  css:
+    theme:
+      dist/css/all.min.css: {}
+  js:
+    js/all.body.min.js: {}
+  dependencies:
+      - core/jquery
+      - core/jquery.ui
+      - core/jquery.ui.widget
+      - core/jquery.ui.table
+      - core/jquery.ui.table.sort
+#  font-awesome:
+#    version: 1.x
+#      css:
+#        state:
+#          /themes/jiscfe/node_modules/font-awesome/css/font-awesome.css: {}

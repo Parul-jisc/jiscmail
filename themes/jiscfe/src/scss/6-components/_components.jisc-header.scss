@@ -1,0 +1,459 @@
+/* ## Jisc header
+ * ========================================================================== */
+
+/**
+ * Usage: Core, generic. Used as:
+ * - Site header (eg //my.jisc.ac.uk)
+ * - Site section header (eg //my.jisc.ac.uk/service-reporting)
+ *
+ * Notes:
+ * 1. Using "display: flex;"" stops the items within from wrapping over two 
+ *    lines.
+ *
+ * Implementation requirements:
+ * a. This is site-specific and will need to be overridden by the site theme.
+ */
+
+.c-jisc-header {
+  @include u-Clearfix;
+  color: $colour-White;
+  background-color: $colour-Grey_Tundora-dark; /* [a] */
+
+  /* div */&--site-header {
+  }
+
+  /* header */&--section-header {
+  }
+
+  &--default {
+  }
+
+  &--has-nav {
+  }
+
+  &--has-subtitle {
+  }
+
+  &--has-subtitle-and-nav {
+  }
+}
+
+
+/* ### Layout
+ * -------------------------------------------------------------------------- */
+
+.c-jisc-header__titles-supersegment {
+
+  .c-jisc-header--has-nav & {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint($breakpoint-MD) {
+      display: block;
+    }
+  }
+
+  .c-jisc-header--has-subtitle &,
+  .c-jisc-header--has-subtitle-and-nav & {
+
+    @include breakpoint($breakpoint-MD) {
+      display: flex;
+      align-items: center;
+      margin-right: -$whitespace-Gutter-single;
+      margin-left: -$whitespace-Gutter-single;
+    }
+  }
+}
+
+.c-jisc-header__menu-supersegment {
+  color: $colour-Grey_MineShaft-light;
+  background-color: $colour-White;
+  border-bottom: $whitespace-Border_Width-thin solid $colour-Grey_Alto;
+
+  &--tabbed {
+
+    .js & {
+
+      @include breakpoint($breakpoint-MD) {
+        background-color: transparent;
+        border-bottom-width: 0;
+      }
+    }
+  }
+
+  &.is-closed {
+
+    .js & {
+      display: none;
+
+      @include breakpoint($breakpoint-MD) {
+        display: block;
+      }
+    }
+  }
+
+  &.is-open {
+    display: block;
+  }
+}
+
+.c-jisc-header__title-segment {
+
+  .c-jisc-header--default & {
+    padding-bottom: $whitespace-VR-separate;
+  }
+
+  .c-jisc-header--has-nav & {
+    padding-bottom: $whitespace-VR-separate;
+  }
+
+  .c-jisc-header--has-subtitle &,
+  .c-jisc-header--has-subtitle-and-nav & {
+
+    @include breakpoint($breakpoint-MD) {
+      flex-basis: 75%;
+      padding-right: $whitespace-Gutter-single;
+      padding-bottom: $whitespace-VR-separate;
+      padding-left: $whitespace-Gutter-single;
+    }
+  }
+}
+
+.c-jisc-header__subtitle-and-menu-trigger-segment {
+
+  .c-jisc-header--has-nav & {
+    align-self: flex-end;
+  }
+
+  .c-jisc-header--has-subtitle & {
+
+    @include breakpoint($breakpoint-MD) {
+      flex-basis: 25%;
+      padding-right: $whitespace-Gutter-single;
+      padding-left: $whitespace-Gutter-single;
+    }
+  }
+
+  .c-jisc-header--has-subtitle-and-nav & {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint($breakpoint-MD) {
+      display: block;
+      flex-basis: 25%;
+      padding-right: $whitespace-Gutter-single;
+      padding-left: $whitespace-Gutter-single;
+    }
+  }
+}
+
+.c-jisc-header__subtitle-subsegment {
+
+  @include breakpoint($breakpoint-MD) {
+    text-align: right;
+  }
+
+  .c-jisc-header--has-subtitle & {
+    padding-bottom: $whitespace-VR-separate;
+  }
+
+  .c-jisc-header--has-subtitle-and-nav & {
+    align-self: center;
+    padding-bottom: $whitespace-VR-associate;
+
+    @include breakpoint($breakpoint-MD) {
+      padding-bottom: $whitespace-VR-separate;
+    }
+  }
+}
+
+.c-jisc-header__menu-trigger-subsegment {
+  align-self: flex-end;
+  padding-left: $whitespace-Gutter-single;
+
+  @include breakpoint($breakpoint-MD) {
+    display: none;
+  }
+
+  .no-js & {
+    display: none;
+  }
+}
+
+/* ### Copy
+ * -------------------------------------------------------------------------- */
+
+.c-jisc-header__title {
+  margin-top: $whitespace-VR-separate;
+  font-family: $font-Roboto;
+  font-size: 2.25rem;
+  font-weight: 300;
+  line-height: 2.7rem;
+
+  @include breakpoint($breakpoint-XS) {
+    font-size: 2.7rem;
+    line-height: 3.6rem;
+  }
+
+  @include breakpoint($breakpoint-MD) {
+    font-size: 3.6rem;
+    line-height: 4.5rem;
+  }
+}
+
+/* a */.c-jisc-header__title-link {
+  @include link-DarkBg(
+    $visited-style: false,
+    $has-surrounding-text: false
+  );
+}
+
+.c-jisc-header__subtitle {
+  @include typo-Trumpet;
+  margin-top: $whitespace-VR-separate;
+
+  @include breakpoint($breakpoint-MD) {
+    @include typo-BodyCopy;
+  }
+}
+
+/* a */.c-jisc-header__subtitle-link {
+  @include link-DarkBg(
+    $visited-style: false,
+    $has-surrounding-text: false
+  );
+}
+
+
+/* ### Menu trigger
+ * -------------------------------------------------------------------------- */
+
+.c-jisc-header__menu-trigger {
+  margin-top: $whitespace-VR-associate;
+}
+
+/* button */.c-jisc-header__menu-trigger-button {
+  display: flex; /* [1] */
+  padding-top: $whitespace-VR-separate;
+  padding-right: $whitespace-Gutter-double;
+  padding-bottom: $whitespace-VR-separate;
+  padding-left: $whitespace-Gutter-double;
+  font-family: $font-Roboto;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1;
+  color: $colour-White;
+  text-align: center;
+  background-color: rgba($colour-Black,.2); /* [a] */
+  border-width: 0;
+
+  &:focus {
+    color: $colour-Blue_BahamaBlue;
+    background-color: $colour-White;
+    outline: $link-Outline;
+    transition: unset;
+  }
+
+  &:hover {
+    color: $colour-Blue_BahamaBlue;
+    cursor: pointer;
+    background-color: $colour-White;
+    transition: all .2s ease;
+  }
+
+  &:focus:hover {
+    transition: unset;
+  }
+
+  &.is-active {
+    color: $colour-Grey_MineShaft-light;
+    background-color: $colour-White;
+
+    &:focus {
+      color: $colour-Blue_BahamaBlue;
+    }
+
+    &:hover {
+      color: $colour-Blue_BahamaBlue;
+    }
+  }
+}
+
+.c-jisc-header__menu-trigger-copy {
+  @include u-Visuallyhidden();
+
+  @include breakpoint($breakpoint-XS) {
+    @include u-Visuallyhidden-undo();
+    margin-right: $whitespace-EnSpace;
+  }
+}
+
+
+/* ### Nav
+ * -------------------------------------------------------------------------- */
+
+.c-jisc-header__nav-title {
+  @include u-Visuallyhidden();
+}
+
+.c-jisc-header__current-page-copy {
+  @include u-Visuallyhidden();
+}
+
+/* #### Tabbed nav
+ * .......................................................................... */
+
+/* nav */.c-jisc-header__tabbed-nav {
+  @include u-Clearfix();
+  margin-right: -$whitespace-Gutter-single;
+  margin-left: -$whitespace-Gutter-single;
+
+  .js & {
+
+    @include breakpoint($breakpoint-MD) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  &--primary {
+
+    .js & {
+
+      @include breakpoint($breakpoint-MD) {
+        float: left;
+      }
+    }
+  }
+
+  &--secondary {
+    border-top: $whitespace-Border_Width-default solid $colour-Grey_Alto;
+
+    .js & {
+
+      @include breakpoint($breakpoint-MD) {
+        float: right;
+        margin-left: $whitespace-Gutter-single - $whitespace-Border_Width-thick;
+        border-top-width: 0;
+      }
+    }
+  }
+}
+
+/* ul */.c-jisc-header__tabbed-nav-list {
+}
+
+/* li */.c-jisc-header__tabbed-nav-item {
+  padding-bottom: $whitespace-VR-separate;
+  font-family: $font-Roboto;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 2.4rem;
+  border-top: $whitespace-Border_Width-thin solid $colour-Grey_Alto;
+
+  .js & {
+
+    @include breakpoint($breakpoint-MD) {
+      float: left;
+      padding-bottom: 0;
+      margin-left: $whitespace-Border_Width-thick;
+      border-top-width: 0;
+    }
+  }
+
+  &--first {
+    border-top-width: 0;
+
+    .js & {
+
+      @include breakpoint($breakpoint-MD) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+/* a */.c-jisc-header__tabbed-nav-copy {
+  display: inline-block;
+  margin-top: $whitespace-VR-separate;
+  margin-right: $whitespace-Gutter-single;
+  margin-left: $whitespace-Gutter-single;
+  color: $colour-Grey_Grey-dark;
+
+  .js & {
+
+    @include breakpoint($breakpoint-MD) {
+      display: block;
+      padding-top: $whitespace-VR-associate;
+      padding-right: $whitespace-Gutter-single * 4/3;
+      padding-bottom: $whitespace-VR-associate;
+      padding-left: $whitespace-Gutter-single * 4/3;
+      margin-top: 0;
+      margin-right: 0;
+      margin-left: 0;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.8rem;
+      color: $colour-White;
+      background-color: rgba($colour-Black,.2); /* [a] */
+    }
+
+    @include breakpoint($breakpoint-LG) {
+      padding-top: $whitespace-VR-associate * 4/3;
+      padding-right: $whitespace-Gutter-double;
+      padding-bottom: $whitespace-VR-associate * 4/3;
+      padding-left: $whitespace-Gutter-double;
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 2.1rem;
+    }
+  }
+
+  &--current {
+    font-weight: 400;
+    color: $colour-Grey_MineShaft-light;
+
+    .js & {
+
+      @include breakpoint($breakpoint-MD) {
+        color: $colour-Grey_MineShaft-light;
+        background-color: $colour-White;
+      }
+    }
+  }
+
+  &--link {
+
+    &:focus {
+      color: $colour-Blue_BahamaBlue;
+      background-color: $colour-Yellow_Dandelion;
+      outline: $link-Outline;
+
+      .js & {
+
+        @include breakpoint($breakpoint-MD) {
+          background-color: $colour-White;
+        }
+      }
+    }
+
+    &:hover {
+      color: $colour-Orange_Jisc;
+      text-decoration: underline;
+
+      .js & {
+
+        @include breakpoint($breakpoint-MD) {
+          color: $colour-Blue_BahamaBlue;
+          text-decoration: none;
+          background-color: $colour-White;
+        }
+      }
+    }
+
+    &:focus:hover {
+      color: $colour-Blue_BahamaBlue;
+      text-decoration: none;
+    }
+  }
+}

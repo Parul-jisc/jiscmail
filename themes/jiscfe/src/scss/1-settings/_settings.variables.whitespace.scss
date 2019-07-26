@@ -1,0 +1,39 @@
+// ## Whitespace
+// ==========================================================================
+
+$whitespace-Unit: .9rem;
+
+
+// ### Borders
+// --------------------------------------------------------------------------
+
+$whitespace-Border_Width-thin:      .1rem;
+$whitespace-Border_Width-default:   .2rem;
+$whitespace-Border_Width-thick:     .3rem;
+
+
+// ### Gutters
+// --------------------------------------------------------------------------
+
+$whitespace-Gutter-single:          $whitespace-Unit;
+$whitespace-Gutter-double:          ($whitespace-Unit * 2);
+$whitespace-Gutter-triple:          ($whitespace-Unit * 3);
+$whitespace-Gutter-quad:            ($whitespace-Unit * 4);
+
+
+// ### Inline spacing
+// --------------------------------------------------------------------------
+
+$whitespace-EmSpace:                1em;
+$whitespace-EnSpace:                .5em;
+$whitespace-InlineSpace:            .25em;
+
+
+// ### Vertical rhythm
+// --------------------------------------------------------------------------
+
+$whitespace-VR-associate:           $whitespace-Unit;
+$whitespace-VR-separate:            ($whitespace-Unit * 2);
+$whitespace-VR-landmark:            ($whitespace-Unit * 3);
+$whitespace-VR-double-landmark:     ($whitespace-Unit * 6);
+$whitespace-VR-triple-landmark:     ($whitespace-Unit * 9);

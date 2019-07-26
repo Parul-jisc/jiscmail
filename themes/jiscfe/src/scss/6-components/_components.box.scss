@@ -1,0 +1,16 @@
+/* ## Box (sitewide)
+ * ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ */
+
+.c-box {
+  @include u-Clearfix;
+  width: 100%;
+  padding-right: $whitespace-Gutter-double;
+  padding-bottom: $whitespace-VR-separate;
+  padding-left: $whitespace-Gutter-double;
+  margin-top: $whitespace-VR-separate;
+  background-color: $colour-Grey_Alabaster;
+}

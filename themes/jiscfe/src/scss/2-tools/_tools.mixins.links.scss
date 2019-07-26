@@ -1,0 +1,202 @@
+// ## Links
+// ==========================================================================
+
+//
+// 1. We do not use "cursor: pointer;" as we rely on the default cursor 
+//    behaviour for links (pointer cursor) and buttons/inputs (default cursor).
+//    "Buttons shouldn't have a hand cursor":
+//    https://adamsilver.io/articles/buttons-shouldnt-have-a-hand-cursor/
+// 2. Include specific :active styles for Safari, to match what other browsers 
+//    use :focus:hover for.
+//
+// .c-usage-a-a {
+//   @include link-LightBg(
+//     $visited-style: true,
+//     $has-surrounding-text: true 
+//   );
+// }
+//
+// .c-usage-a-b {
+//   @include link-LightBg(
+//     $visited-style: true,
+//     $has-surrounding-text: false 
+//   );
+// }
+//
+// .c-usage-b-a {
+//   @include link-DarkBg(
+//     $visited-style: true,
+//     $has-surrounding-text: true 
+//   );
+// }
+//
+// .c-usage-b-b {
+//   @include link-DarkBg(
+//     $visited-style: false,
+//     $has-surrounding-text: false 
+//   );
+// }
+//
+// .c-usage-c-a {
+//   @include link-LightBg-has-icon(
+//     $visited-style: true,
+//     $has-surrounding-text: true 
+//   );
+// }
+//
+// .c-usage-c-b {
+//   @include link-LightBg-has-icon(
+//     $visited-style: false,
+//     $has-surrounding-text: true 
+//   );
+// }
+//
+// .c-usage-c-c {
+//   @include link-LightBg-has-icon(
+//     $visited-style: false,
+//     $has-surrounding-text: false 
+//   );
+// }
+//
+
+
+// ### Link mixins specific variables
+// --------------------------------------------------------------------------
+
+$link-Hover_Transition: color .2s ease;
+$link-Outline: $whitespace-Border_Width-thick solid $colour-Yellow_Dandelion;
+
+
+// ### Link mixins
+// --------------------------------------------------------------------------
+
+@mixin link-Focus() {
+  color: $colour-Blue_BahamaBlue;
+  text-decoration: none;
+  background-color: $colour-Yellow_Dandelion;
+  outline: $link-Outline;
+}
+
+@mixin link-LightBg($visited-style, $has-surrounding-text) {
+
+  &:link {
+    color: $colour-Blue_DeepCerulean;
+    text-decoration: if($has-surrounding-text, underline, none);
+  }
+
+  &:visited {
+    color: if($visited-style, $colour-Purple_FuchsiaBlue, $colour-Blue_DeepCerulean);
+  }
+
+  &:focus {
+    @include link-Focus();
+  }
+
+  &:hover { // [1]
+    color: $colour-Orange_Jisc;
+
+    @if not $has-surrounding-text {
+      text-decoration: underline;
+    }
+
+    transition: $link-Hover_Transition;
+  }
+
+  &:focus:hover {
+    @include link-Focus();
+  }
+
+  &:active { // [2]
+    @include link-Focus();
+  }
+}
+
+@mixin link-DarkBg($visited-style, $has-surrounding-text) {
+
+  @if not $visited-style and $has-surrounding-text {
+    @error 'You cannot use a non-visited link style in a link that has surrounding text, as links in blocks of text need a visited style.';
+  }
+
+  &:link {
+    color: $colour-White;
+    text-decoration: if($has-surrounding-text, underline, none);
+
+    @media print {
+      color: $colour-Blue_DeepCerulean;
+    }
+  }
+
+  &:visited {
+    color: if($visited-style, $colour-Grey_Alto, $colour-White);
+    
+    @media print {
+      color: if($visited-style, $colour-Purple_FuchsiaBlue, $colour-Blue_DeepCerulean);
+    }
+  }
+
+  &:focus {
+    @include link-Focus();
+  }
+
+  &:hover { // [1]
+    color: $colour-Grey_Alto;
+
+    @if not $has-surrounding-text {
+      text-decoration: underline;
+    }
+
+    transition: $link-Hover_Transition;
+  }
+
+  &:focus:hover {
+    @include link-Focus();
+  }
+
+  &:active { // [2]
+    @include link-Focus();
+  }
+}
+
+@mixin link-LightBg-has-icon($visited-style, $has-surrounding-text) {
+
+  &:link {
+    color: $colour-Blue_DeepCerulean;
+
+    span {
+      text-decoration: if($has-surrounding-text, underline, none);
+    }
+  }
+
+  &:visited {
+    color: if($visited-style, $colour-Purple_FuchsiaBlue, $colour-Blue_DeepCerulean);
+  }
+
+  &:focus {
+    @include link-Focus();
+
+    span {
+      text-decoration: none;
+    }
+  }
+
+  &:hover { // [1]
+    color: $colour-Orange_Jisc;
+
+    @if not $has-surrounding-text {
+
+      span {
+        text-decoration: underline;
+      }
+    }
+
+    transition: $link-Hover_Transition;
+  }
+
+  &:focus:hover {
+    @include link-Focus();
+  }
+
+  &:active { // [2]
+    @include link-Focus();
+  }
+}

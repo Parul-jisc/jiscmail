@@ -1,0 +1,17 @@
+// ## Ellipses
+// ==========================================================================
+
+//
+// Preventing overflow with ellipsis.
+//
+// "Handling Long Words and URLs (Forcing Breaks, Hyphenation, Ellipsis, etc)":
+// https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+// Last updated: 2018-04-03.
+// Accessed: 2018-06-16.
+//
+
+@mixin u-Ellipses() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

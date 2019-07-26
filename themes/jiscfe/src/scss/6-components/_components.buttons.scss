@@ -1,0 +1,82 @@
+/* ## Buttons
+ * ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ */
+
+/* a, button, input type="reset" input type="submit" */.c-button {
+  display: inline-block;
+  padding: calc(.6rem - #{$whitespace-Border_Width-thin}) calc(#{$whitespace-Gutter-double} - #{$whitespace-Border_Width-thin});
+  font-family: $font-Roboto;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  border-width: $whitespace-Border_Width-thin;
+  border-style: solid;
+  border-radius: $global-Radius;
+
+  &:focus,
+  &:hover {    
+    color: $colour-White;
+    background-color: $colour-Blue_PacificBlue;
+    border-color: $colour-Blue_PacificBlue;
+    transition: background-color $transition-Type_Cubic, 
+                border-color $transition-Type_Cubic,
+                box-shadow $transition-Type_Cubic;
+  }
+
+  &:hover {
+    @include elevation(2);
+  }
+
+  &:focus {
+    border-radius: 0;
+    outline: $link-Outline;
+    transition: none;
+  }
+
+  &:focus:hover {
+    border-radius: $global-Radius;
+  }
+
+  &:active, &:hover {
+    outline: 0;
+  };
+
+  &:active {
+    @include elevation(0);
+    transition: none;
+  };
+
+  &--primary {
+    color: $colour-White;
+    background-color: $colour-Blue_BahamaBlue;
+    border-color: $colour-Blue_BahamaBlue;
+  }
+
+  &--primary-dark-bg {
+    color: $colour-Blue_BahamaBlue;
+    background-color: $colour-White;
+    border-color: $colour-White;
+  }
+
+  &--secondary {
+    color: $colour-Blue_BahamaBlue;
+    background-color: $colour-Grey_Alabaster;
+    border-color: $colour-Grey_Alabaster;
+  }
+
+  &--ghost {
+    color: $colour-Blue_BahamaBlue;
+    background-color: transparent;
+    border-color: $colour-Blue_BahamaBlue;
+  }  
+
+  &--ghost-dark-bg {
+    color: $colour-White;
+    background-color: transparent;
+    border-color: $colour-White;
+  }
+}

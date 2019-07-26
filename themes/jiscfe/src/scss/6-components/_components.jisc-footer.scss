@@ -1,0 +1,297 @@
+/* ## Jisc footer
+ * ========================================================================== */
+
+/**
+ * Usage: Core, generic.
+ *
+ * 1. Include specific :active styles for Safari, to match what other browsers 
+ *    use :focus:hover for.
+ */
+
+/* footer */.c-jisc-footer {
+  @include u-Clearfix();
+  margin-top: $whitespace-VR-double-landmark;
+}
+
+/* h2 */.c-jisc-footer__title {
+  @include u-Visuallyhidden();
+}
+
+
+/* ### Layout
+   -------------------------------------------------------------------------- */
+
+/* section */.c-jisc-footer__section {
+  @include u-Clearfix();
+  padding-bottom: $whitespace-VR-landmark;
+
+  &--service {
+    color: $colour-Grey_MineShaft-light;
+    background-color: $colour-Grey_Mercury;
+
+    @include breakpoint($breakpoint-MD) {
+      padding-top: $whitespace-VR-landmark;
+      padding-bottom: $whitespace-VR-double-landmark;
+    }
+  }
+
+  &--jisc {
+    color: $colour-Grey_MineShaft-light;
+    background-color: $colour-Grey_Alto;
+
+    @include breakpoint($breakpoint-MD) {
+      padding-top: $whitespace-VR-landmark;
+      padding-bottom: $whitespace-VR-double-landmark;
+    }
+  }
+
+  &--legal {
+    color: $colour-White;
+    background-color: $colour-Grey_MineShaft-light;
+  }
+}
+
+
+/* ### Generic
+   -------------------------------------------------------------------------- */
+
+.c-jisc-footer__section-title {
+  margin-top: $whitespace-VR-landmark;
+  font-family: $font-Roboto;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 2.1rem;
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 400;
+  }
+}
+
+.c-jisc-footer__copy {
+
+  a {
+    @include link-LightBg(
+      $visited-style: true,
+      $has-surrounding-text: true
+    );
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  p {
+    @include typo-Trumpet();
+    margin-top: $whitespace-VR-associate;
+
+    strong {
+      font-weight: 500;
+    }
+  }
+}
+
+.c-jisc-footer__list {
+  margin-top: $whitespace-VR-separate;
+}
+
+.c-jisc-footer__list-item {
+  margin-top: $whitespace-VR-associate;
+  font-family: $font-Roboto;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.c-jisc-footer__list-item-link {
+  @include link-LightBg(
+    $visited-style: true,
+    $has-surrounding-text: true
+  );
+}
+
+
+/* ### Service section
+   -------------------------------------------------------------------------- */
+
+.c-jisc-footer__service-feedback {
+  margin-top: $whitespace-VR-separate;
+  font-family: $font-Roboto;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+}
+
+.c-jisc-footer__service-feedback-link {
+  display: inline-block;
+
+  &:link {
+    padding:
+      calc(#{$whitespace-VR-associate} - #{$whitespace-Border_Width-thin})
+      calc(#{$whitespace-Gutter-double} - #{$whitespace-Border_Width-thin});
+    color: $colour-Blue_DeepCerulean;
+    border: $whitespace-Border_Width-thin solid $colour-Blue_DeepCerulean;
+  }
+
+  &:focus {
+    @include link-Focus();
+    color: $colour-Blue_BahamaBlue;
+    border-color: $colour-Blue_BahamaBlue;
+  }
+
+  &:hover {
+    color: $colour-Orange_Jisc;
+    border-color: $colour-Orange_Jisc;
+    transition: $link-Hover_Transition, border .2s ease;
+  }
+
+  &:focus:hover {
+    @include link-Focus();
+    color: $colour-Blue_BahamaBlue;
+    border-color: $colour-Blue_BahamaBlue;
+  }
+
+  &:active { /* [1] */
+    @include link-Focus();
+  }
+}
+
+.c-jisc-footer__service-feedback-link-copy {
+  margin-left: $whitespace-EnSpace;
+  text-decoration: underline;
+
+  .c-jisc-footer__service-feedback-link:focus & {
+    text-decoration: none;
+  }
+
+  .c-jisc-footer__service-feedback-link:focus:hover & {
+    text-decoration: none;
+  }
+}
+
+
+/* ### Jisc section
+   -------------------------------------------------------------------------- */
+
+.c-jisc-footer__jisc-brand {
+
+  @include breakpoint($breakpoint-XS) {
+    display: flex;
+  }
+}
+
+.c-jisc-footer__jisc-logo {
+  margin-top: $whitespace-VR-landmark;
+}
+
+.c-jisc-footer__jisc-vision {
+  margin-top: $whitespace-VR-separate;
+
+  @include breakpoint($breakpoint-XS) {
+    margin-left: $whitespace-Gutter-triple;
+  }
+}
+
+.c-jisc-footer__jisc-homepage-copy {
+  @include typo-Trumpet();
+  margin-top: $whitespace-VR-associate;
+
+  @include breakpoint($breakpoint-MD) {
+    margin-top: $whitespace-VR-separate;
+  }
+}
+
+.c-jisc-footer__jisc-homepage-link {
+  @include link-LightBg(
+    $visited-style: true,
+    $has-surrounding-text: true
+  );
+}
+
+
+/* ### Legal section
+   -------------------------------------------------------------------------- */
+
+.c-jisc-footer__legal-title {
+  @include u-Visuallyhidden();
+}
+
+.c-jisc-footer__legal-list {
+  margin-top: $whitespace-VR-landmark;
+
+  @include breakpoint($breakpoint-MS) {
+    margin-top: $whitespace-VR-separate;
+  }
+
+  &--primary {
+
+    @include breakpoint($breakpoint-MS) {
+      float: left;
+    }
+  }
+
+  &--secondary {
+
+    @include breakpoint($breakpoint-MS) {
+      float: right;
+      margin-right: -$whitespace-Gutter-double;
+      margin-left: $whitespace-Gutter-single;
+    }
+
+    @include breakpoint($breakpoint-MD) {
+      margin-right: -$whitespace-Gutter-triple;
+      margin-left: $whitespace-Gutter-double;
+    }
+
+    @include breakpoint($breakpoint-ML) {
+      margin-right: -$whitespace-Gutter-quad;
+    }
+  }
+}
+
+.c-jisc-footer__legal-list-item {
+  margin-top: $whitespace-VR-associate;
+  font-family: $font-Roboto;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+
+  @include breakpoint($breakpoint-MS) {
+    float: left;
+    margin-right: $whitespace-Gutter-double;
+  }
+
+  @include breakpoint($breakpoint-MD) {
+    margin-right: $whitespace-Gutter-triple;
+  }
+
+  @include breakpoint($breakpoint-ML) {
+    margin-right: $whitespace-Gutter-quad;
+  }
+
+  abbr[title] {
+    @include u-Abbr();
+  }
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.c-jisc-footer__legal-link {
+  @include link-DarkBg(
+    $visited-style: true,
+    $has-surrounding-text: true
+  );
+}
